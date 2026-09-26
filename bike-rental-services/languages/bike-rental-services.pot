@@ -1,0 +1,1298 @@
+# Copyright (C) 2026 revolutionwp
+# This file is distributed under the GNU General Prefer License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Bike Rental Services 2.2.8\n"
+"Report-Msgid-Bugs-To: https://WordPress.org/support/theme/bike-rental-services\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-28T07:05:42+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: bike-rental-services\n"
+
+#. Theme Name of the theme
+#: style.css
+#: revolution/inc/customizer.php:1591
+msgid "Bike Rental Services"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.revolutionwp.com/products/free-bike-rental-WordPress-theme"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "The Bike Rental Services WordPress Theme is an intuitive, feature-rich theme designed specifically for businesses in the bike rental industry. Whether you offer electric bikes, mountain bikes, city bikes, or other types of bicycles, this theme provides a seamless online platform to manage and display your services effectively. Its clean, modern design is tailored to attract a wide variety of customers, from tourists exploring new cities to local cyclists in need of quick rentals for transportation or recreation. The theme comes with integrated features like an online booking system, where customers can easily check availability, view rental rates, and reserve bikes directly on the website. Pricing tables and contact forms are also included, making it easy for potential clients to inquire about rental terms and communicate with your business. The layout is fully responsive, ensuring that your website looks great and functions smoothly on any device, from desktops to mobile phones. Additionally, the Bike Rental Services WordPress Theme offers customization options, allowing you to tailor the design to suit your branding and unique business needs. It also supports essential elements for local SEO, ensuring that your website ranks well in search engine results for bike rental-related queries. With its user-friendly interface and business-centric features, the theme helps to enhance customer engagement, streamline rental processes, and boost your business’s online presence, making it an essential tool for any bike rental business looking to grow and succeed in the digital space."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "revolutionwp"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.revolutionwp.com/"
+msgstr ""
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:25
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:31
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:56
+msgid "Comments are closed."
+msgstr ""
+
+#: demo-import/bike_rental_services_config_file.php:24
+msgid "Demo Importer"
+msgstr ""
+
+#: demo-import/bike_rental_services_config_file.php:26
+msgid "Click On The Image To Import Customizer Demo"
+msgstr ""
+
+#: demo-import/bike_rental_services_config_file.php:27
+msgid "Click On The Image To Import Gutenberg Block Demo"
+msgstr ""
+
+#: demo-import/bike_rental_services_config_file.php:32
+#: demo-import/importer.php:149
+msgid "All Done"
+msgstr ""
+
+#: demo-import/importer.php:139
+msgid "Customizer"
+msgstr ""
+
+#: demo-import/importer.php:143
+msgid "Import Demo"
+msgstr ""
+
+#: demo-import/importer.php:181
+msgid "Thank you for choosing this Bike Rental Services Theme. Using this quick setup wizard, you will be able to configure your new website and get it running in just a few minutes. Just follow these simple steps mentioned in the wizard and get started with your website."
+msgstr ""
+
+#: demo-import/importer.php:190
+msgid "This theme allows you to import demo content and add widgets. Install them using the button below. You can also update or deactivate them using the Customizer."
+msgstr ""
+
+#: demo-import/importer.php:203
+msgid "About Bike Rental Services"
+msgstr ""
+
+#: demo-import/importer.php:204
+#: demo-import/importer.php:205
+msgid "Customize Your Demo"
+msgstr ""
+
+#: demo-import/importer.php:206
+msgid "Visit Your Site"
+msgstr ""
+
+#: demo-import/importer.php:209
+msgid "Finish"
+msgstr ""
+
+#: demo-import/importer.php:228
+#: revolution/inc/breadcrumbs.php:314
+msgid "Home"
+msgstr ""
+
+#: demo-import/importer.php:238
+msgid "About"
+msgstr ""
+
+#: demo-import/importer.php:249
+msgid "Services"
+msgstr ""
+
+#: demo-import/importer.php:260
+msgid "Blog"
+msgstr ""
+
+#: demo-import/importer.php:271
+msgid "Contact Us"
+msgstr ""
+
+#: demo-import/importer.php:298
+msgid "Facebook"
+msgstr ""
+
+#: demo-import/importer.php:304
+msgid "Pinterest"
+msgstr ""
+
+#: demo-import/importer.php:310
+msgid "Twitter"
+msgstr ""
+
+#: demo-import/importer.php:316
+msgid "Youtube"
+msgstr ""
+
+#: demo-import/importer.php:322
+msgid "Instagram"
+msgstr ""
+
+#: demo-import/importer.php:509
+msgid "Welcome to Bike Rental Services"
+msgstr ""
+
+#: demo-import/importer.php:510
+msgid "The quick setup wizard will assist you in configuring your new website. This wizard will import the demo content."
+msgstr ""
+
+#: demo-import/importer.php:513
+msgid "Go Premium Now"
+msgstr ""
+
+#: footer.php:54
+msgid "Search"
+msgstr ""
+
+#: footer.php:58
+msgid "Tags"
+msgstr ""
+
+#: footer.php:72
+msgid "No tags available. Add some tags to display here."
+msgstr ""
+
+#: footer.php:78
+#: page.php:102
+#: page.php:183
+#: sidebar.php:83
+msgid "Calender"
+msgstr ""
+
+#: footer.php:105
+msgid "Bike Rental Services WordPress Theme By Revolution WP "
+msgstr ""
+
+#: functions.php:24
+msgid "Primary"
+msgstr ""
+
+#: functions.php:25
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:95
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:97
+#: functions.php:109
+#: functions.php:121
+#: functions.php:133
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:107
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:119
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:131
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:223
+msgid "Related Post"
+msgstr ""
+
+#: functions.php:331
+msgid "Dismiss"
+msgstr ""
+
+#. translators: %s!: Theme Name.
+#: functions.php:342
+msgid "Welcome to the free theme: %s!"
+msgstr ""
+
+#: functions.php:346
+msgid "Get started by exploring the features of your new theme. Customize your design, add your content, and create a site that fits your vision."
+msgstr ""
+
+#: functions.php:351
+msgid "Theme Screenshot"
+msgstr ""
+
+#: functions.php:355
+msgid "Quick Start: Import Demo"
+msgstr ""
+
+#: functions.php:356
+msgid "Use the Demo Importer to quickly set up your site with a pre-made layout. Get a complete site in minutes."
+msgstr ""
+
+#: functions.php:357
+msgid "Go to Demo Importer"
+msgstr ""
+
+#: functions.php:361
+msgid "Customize Your Theme"
+msgstr ""
+
+#: functions.php:362
+msgid "Want to make it truly yours? Explore the Getting Started Guide to personalize your site to suit your needs."
+msgstr ""
+
+#: functions.php:363
+msgid "View Getting Started Guide"
+msgstr ""
+
+#: functions.php:459
+msgid "https://WordPress.org/support/theme/bike-rental-services/"
+msgstr ""
+
+#: functions.php:460
+msgid "https://www.revolutionwp.com/pages/community/"
+msgstr ""
+
+#: functions.php:461
+msgid "https://WordPress.org/support/theme/bike-rental-services/reviews/#new-post"
+msgstr ""
+
+#: functions.php:462
+msgid "https://www.revolutionwp.com/products/bike-shop-WordPress-theme"
+msgstr ""
+
+#: functions.php:463
+msgid "https://demo.revolutionwp.com/bike-rental-services-pro/"
+msgstr ""
+
+#: functions.php:464
+msgid "https://demo.revolutionwp.com/wpdocs/bike-rental-services-pro/"
+msgstr ""
+
+#: functions.php:465
+msgid "https://demo.revolutionwp.com/wpdocs/bike-rental-services-free"
+msgstr ""
+
+#. translators: 1: Theme Name.
+#: getstarted/bike_rental_services_about_page.php:47
+#: getstarted/bike_rental_services_about_page.php:48
+msgid "About %1$s"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:57
+msgid "Getting Started"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:58
+msgid "Free VS Pro"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:59
+msgid "Changelog"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:60
+msgid "Support"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:61
+msgid "Rate & Review"
+msgstr ""
+
+#. translators: 1: Theme Name.
+#: getstarted/bike_rental_services_about_page.php:72
+msgid "Welcome to %1$s - Version %2$s"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:79
+#: getstarted/bike_rental_services_about_page.php:401
+msgid "Buy Pro Theme"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:80
+msgid "Preview Pro Version"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:172
+msgid "Theme screenshot"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:179
+#: getstarted/bike_rental_services_about_page.php:226
+msgid "One Click Demo Import"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:180
+msgid "Easily set up your website with our One Click Demo Import feature. This functionality allows you to replicate our demo site with just a single click, ensuring you have a fully functional layout to start from. Whether you’re a beginner or an experienced developer, this tool simplifies the setup process, saving you time and effort."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:181
+msgid "Click Here For Demo Import"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:185
+msgid "Documentation"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:186
+msgid "Need more details? Check our comprehensive documentation for step-by-step guidance on using the Bike Rental Services Theme."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:187
+msgid "Go to Free Docs"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:191
+msgid "Preview Pro Theme"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:192
+msgid "Discover the full potential of our Pro Theme! Click the Live Demo button to experience premium features and beautiful designs."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:193
+msgid "Live Demo"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:197
+msgid "Buy Bike Rental Services Pro"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:198
+msgid "Unlock unlimited features and enhancements by purchasing the Pro version of Bike Rental Services Theme."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:199
+msgid "Buy Pro Version @$39"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:203
+msgid "Get the Bundle"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:204
+msgid "The WordPress Theme Bundle is a comprehensive collection of all premium themes, offering everything you need to create stunning, professional websites with ease."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:205
+msgid "Get Bundle"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:218
+msgid "Features"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:219
+msgid "Free theme"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:220
+msgid "Pro Theme"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:230
+msgid "After the activation of Bike Rental Services theme, all settings will be imported and Data Import."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:242
+msgid "Responsive Design"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:252
+msgid "Site Logo upload"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:262
+msgid "Footer Copyright text"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:266
+msgid "Remove the copyright text from the Footer."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:278
+msgid "Global Color"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:288
+msgid "Regular Bug Fixes"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:298
+msgid "Theme Sections"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:301
+msgid "2 Sections"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:302
+msgid "15+ Sections"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:308
+msgid "Custom colors"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:312
+msgid "Choose a color for links, buttons, icons and so on."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:324
+msgid "Google fonts"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:328
+msgid "You can choose and use over 600 different fonts, for the logo, the menu and the titles."
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:340
+msgid "Enhanced Plugin Integration"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:350
+msgid "Fully SEO Optimized"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:360
+msgid "Premium Support"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:370
+msgid "Extensive Customization"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:380
+msgid "Custom Post Types"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:390
+msgid "High-Level Compatibility with Modern Browsers"
+msgstr ""
+
+#: getstarted/bike_rental_services_about_page.php:399
+msgid "Try Out Our Premium Version"
+msgstr ""
+
+#: getstarted/bike_rental_services_changelog.php:29
+msgid "No changelog available."
+msgstr ""
+
+#: header.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: page.php:40
+#: page.php:121
+#: sidebar.php:20
+msgid "Search Anything"
+msgstr ""
+
+#: page.php:44
+#: page.php:125
+#: sidebar.php:24
+msgid "Latest Posts"
+msgstr ""
+
+#: page.php:55
+#: page.php:136
+#: sidebar.php:35
+msgid "Latest Comments"
+msgstr ""
+
+#: page.php:69
+#: page.php:150
+#: sidebar.php:49
+msgid "Explore Categories"
+msgstr ""
+
+#: page.php:80
+#: page.php:161
+#: sidebar.php:60
+msgid "Blog Archives"
+msgstr ""
+
+#: page.php:91
+#: page.php:172
+#: sidebar.php:72
+msgid "Explore Our Pages"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Home Page"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:312
+msgid "Browse:"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:313
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:315
+msgid "404 Not Found"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:316
+msgid "Archives"
+msgstr ""
+
+#. Translators: %s is the search query.
+#: revolution/inc/breadcrumbs.php:318
+msgid "Search results for: %s"
+msgstr ""
+
+#. Translators: %s is the page number.
+#: revolution/inc/breadcrumbs.php:320
+msgid "Page %s"
+msgstr ""
+
+#. Translators: %s is the page number.
+#: revolution/inc/breadcrumbs.php:322
+msgid "Comment Page %s"
+msgstr ""
+
+#. Translators: Minute archive title. %s is the minute time format.
+#: revolution/inc/breadcrumbs.php:324
+msgid "Minute %s"
+msgstr ""
+
+#. Translators: Weekly archive title. %s is the week date format.
+#: revolution/inc/breadcrumbs.php:326
+msgid "Week %s"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:786
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:803
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:820
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:836
+#: revolution/inc/breadcrumbs.php:865
+#: revolution/inc/breadcrumbs.php:892
+#: revolution/inc/breadcrumbs.php:919
+#: revolution/inc/breadcrumbs.php:1259
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:837
+#: revolution/inc/breadcrumbs.php:893
+#: revolution/inc/breadcrumbs.php:1263
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:838
+#: revolution/inc/breadcrumbs.php:1267
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: revolution/inc/breadcrumbs.php:866
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: revolution/inc/customizer.php:39
+msgid "WooCommerce Custom Settings"
+msgstr ""
+
+#: revolution/inc/customizer.php:56
+msgid "Product Per Single Row"
+msgstr ""
+
+#: revolution/inc/customizer.php:80
+msgid "Product Per One Page"
+msgstr ""
+
+#: revolution/inc/customizer.php:105
+msgid "Enable Related Product"
+msgstr ""
+
+#: revolution/inc/customizer.php:106
+msgid "Checked to show Related Product"
+msgstr ""
+
+#: revolution/inc/customizer.php:125
+msgid "Related Product Count"
+msgstr ""
+
+#: revolution/inc/customizer.php:149
+msgid "Related Product Per Row"
+msgstr ""
+
+#: revolution/inc/customizer.php:167
+msgid "Archive Product Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:170
+#: revolution/inc/customizer.php:186
+#: revolution/inc/customizer.php:336
+#: revolution/inc/customizer.php:352
+#: revolution/inc/customizer.php:368
+msgid "Sidebar On Right"
+msgstr ""
+
+#: revolution/inc/customizer.php:171
+#: revolution/inc/customizer.php:187
+#: revolution/inc/customizer.php:337
+#: revolution/inc/customizer.php:353
+#: revolution/inc/customizer.php:369
+msgid "Sidebar On Left"
+msgstr ""
+
+#: revolution/inc/customizer.php:172
+#: revolution/inc/customizer.php:188
+#: revolution/inc/customizer.php:338
+#: revolution/inc/customizer.php:354
+#: revolution/inc/customizer.php:370
+msgid "Full Width Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:183
+msgid "Single Product Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:199
+msgid "Woocommerce Product Sale Positions"
+msgstr ""
+
+#: revolution/inc/customizer.php:203
+#: revolution/inc/customizer.php:473
+#: revolution/inc/customizer.php:1466
+msgid "Right"
+msgstr ""
+
+#: revolution/inc/customizer.php:204
+#: revolution/inc/customizer.php:471
+#: revolution/inc/customizer.php:1467
+msgid "Left"
+msgstr ""
+
+#: revolution/inc/customizer.php:205
+#: revolution/inc/customizer.php:472
+#: revolution/inc/customizer.php:1468
+msgid "Center"
+msgstr ""
+
+#: revolution/inc/customizer.php:215
+msgid "Bike Rental Services Theme Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:223
+msgid "Additional Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:241
+msgid "Enable Sticky Header"
+msgstr ""
+
+#: revolution/inc/customizer.php:242
+msgid "Checked to enable sticky header"
+msgstr ""
+
+#: revolution/inc/customizer.php:262
+msgid "Enable Preloader"
+msgstr ""
+
+#: revolution/inc/customizer.php:263
+msgid "Checked to show preloader"
+msgstr ""
+
+#: revolution/inc/customizer.php:283
+msgid "Enable Breadcrumbs"
+msgstr ""
+
+#: revolution/inc/customizer.php:284
+msgid "Checked to show Breadcrumbs"
+msgstr ""
+
+#: revolution/inc/customizer.php:304
+msgid "Enable Pagination"
+msgstr ""
+
+#: revolution/inc/customizer.php:305
+msgid "Checked to show Pagination"
+msgstr ""
+
+#: revolution/inc/customizer.php:318
+msgid "Select Pagination Type"
+msgstr ""
+
+#: revolution/inc/customizer.php:321
+msgid "Type 1"
+msgstr ""
+
+#: revolution/inc/customizer.php:322
+msgid "Type 2"
+msgstr ""
+
+#: revolution/inc/customizer.php:333
+msgid "Post Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:349
+msgid "Single Post Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:365
+msgid "Single Page Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:379
+msgid "Blog Page Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:390
+msgid "Enable Blog Post Title"
+msgstr ""
+
+#: revolution/inc/customizer.php:391
+msgid "Checked To Show Blog Post Title"
+msgstr ""
+
+#: revolution/inc/customizer.php:403
+msgid "Enable Blog Post Meta"
+msgstr ""
+
+#: revolution/inc/customizer.php:404
+msgid "Checked To Show Blog Post Meta Feilds"
+msgstr ""
+
+#: revolution/inc/customizer.php:416
+msgid "Enable Blog Post Tags"
+msgstr ""
+
+#: revolution/inc/customizer.php:417
+msgid "Checked To Show Blog Post Tags"
+msgstr ""
+
+#: revolution/inc/customizer.php:429
+msgid "Enable Blog Post Image"
+msgstr ""
+
+#: revolution/inc/customizer.php:430
+msgid "Checked To Show Blog Post Image"
+msgstr ""
+
+#: revolution/inc/customizer.php:442
+msgid "Enable Blog Post Content"
+msgstr ""
+
+#: revolution/inc/customizer.php:443
+msgid "Checked To Show Blog Post Content"
+msgstr ""
+
+#: revolution/inc/customizer.php:455
+msgid "Enable Blog Post Read More Button"
+msgstr ""
+
+#: revolution/inc/customizer.php:456
+msgid "Checked To Show Blog Post Read More Button"
+msgstr ""
+
+#: revolution/inc/customizer.php:468
+msgid "Blog Post Content Layout"
+msgstr ""
+
+#: revolution/inc/customizer.php:491
+msgid "Excerpt Limit"
+msgstr ""
+
+#: revolution/inc/customizer.php:516
+#: revolution/inc/customizer.php:950
+#: revolution/inc/customizer.php:1341
+msgid "Edit Button Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:527
+msgid "Single Post Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:538
+msgid "Enable Single Post Title"
+msgstr ""
+
+#: revolution/inc/customizer.php:539
+msgid "Checked To Show Single Blog Post Title"
+msgstr ""
+
+#: revolution/inc/customizer.php:551
+msgid "Enable Single Post Meta"
+msgstr ""
+
+#: revolution/inc/customizer.php:552
+msgid "Checked To Show Single Blog Post Meta Feilds"
+msgstr ""
+
+#: revolution/inc/customizer.php:564
+msgid "Enable Single Post Tags"
+msgstr ""
+
+#: revolution/inc/customizer.php:565
+msgid "Checked To Show Single Blog Post Tags"
+msgstr ""
+
+#: revolution/inc/customizer.php:577
+msgid "Enable Single Post Image"
+msgstr ""
+
+#: revolution/inc/customizer.php:578
+msgid "Checked To Show Single Post Image"
+msgstr ""
+
+#: revolution/inc/customizer.php:590
+msgid "Enable Single Post Content"
+msgstr ""
+
+#: revolution/inc/customizer.php:591
+msgid "Checked To Show Single Blog Post Content"
+msgstr ""
+
+#: revolution/inc/customizer.php:610
+msgid "Enable Related Post"
+msgstr ""
+
+#: revolution/inc/customizer.php:611
+msgid "Checked to show Related Post"
+msgstr ""
+
+#: revolution/inc/customizer.php:631
+msgid "Edit Related Post Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:651
+msgid "Related Post Count"
+msgstr ""
+
+#: revolution/inc/customizer.php:676
+msgid "Enable Comment Section"
+msgstr ""
+
+#: revolution/inc/customizer.php:677
+msgid "Checked to show Comment Section"
+msgstr ""
+
+#: revolution/inc/customizer.php:692
+msgid "Global Color Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:708
+msgid "Primary Color"
+msgstr ""
+
+#: revolution/inc/customizer.php:731
+msgid "Enable Title"
+msgstr ""
+
+#: revolution/inc/customizer.php:732
+msgid "Enable or Disable Title from the site"
+msgstr ""
+
+#: revolution/inc/customizer.php:751
+msgid "Enable Tagline"
+msgstr ""
+
+#: revolution/inc/customizer.php:752
+msgid "Enable or Disable Tagline from the site"
+msgstr ""
+
+#: revolution/inc/customizer.php:771
+msgid "Logo Width in PX"
+msgstr ""
+
+#: revolution/inc/customizer.php:785
+msgid "Typography Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:795
+msgid "Global Font Family"
+msgstr ""
+
+#: revolution/inc/customizer.php:799
+msgid "Default (Theme Font)"
+msgstr ""
+
+#: revolution/inc/customizer.php:827
+msgid "Top Header Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:845
+msgid "Edit Phone Text"
+msgstr ""
+
+#: revolution/inc/customizer.php:865
+msgid "Edit Phone Number"
+msgstr ""
+
+#: revolution/inc/customizer.php:878
+msgid "Phone Number Icon"
+msgstr ""
+
+#: revolution/inc/customizer.php:898
+msgid "Edit Mail Text"
+msgstr ""
+
+#: revolution/inc/customizer.php:918
+msgid "Edit Mail Address "
+msgstr ""
+
+#: revolution/inc/customizer.php:930
+msgid "Mail Icon"
+msgstr ""
+
+#: revolution/inc/customizer.php:970
+#: revolution/inc/customizer.php:1361
+msgid "Edit Button Link "
+msgstr ""
+
+#: revolution/inc/customizer.php:989
+msgid "Enable Disable Search"
+msgstr ""
+
+#: revolution/inc/customizer.php:990
+msgid "Enable or Disable header Search"
+msgstr ""
+
+#: revolution/inc/customizer.php:1004
+msgid "Main Slider Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:1022
+msgid "Enable Main Slider"
+msgstr ""
+
+#: revolution/inc/customizer.php:1023
+msgid "Checked to show the main slider"
+msgstr ""
+
+#: revolution/inc/customizer.php:1046
+msgid "Edit Slider Image "
+msgstr ""
+
+#: revolution/inc/customizer.php:1047
+msgid "Edit the slider image."
+msgstr ""
+
+#: revolution/inc/customizer.php:1067
+msgid "Edit Extra Heading Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:1068
+msgid "Edit the slider extra heading text."
+msgstr ""
+
+#: revolution/inc/customizer.php:1088
+msgid "Edit Heading Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:1089
+msgid "Edit the slider heading text."
+msgstr ""
+
+#: revolution/inc/customizer.php:1109
+msgid "Edit Content Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:1110
+msgid "Edit the slider content text."
+msgstr ""
+
+#: revolution/inc/customizer.php:1131
+msgid "Edit Button #1 Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:1132
+msgid "Edit the slider button text."
+msgstr ""
+
+#: revolution/inc/customizer.php:1152
+msgid "Edit Button #1 URL "
+msgstr ""
+
+#: revolution/inc/customizer.php:1153
+msgid "Edit the slider button url."
+msgstr ""
+
+#: revolution/inc/customizer.php:1168
+msgid "Featured Bike Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:1186
+msgid "Enable Featured Bike Section"
+msgstr ""
+
+#: revolution/inc/customizer.php:1187
+msgid "Checked to show the project"
+msgstr ""
+
+#: revolution/inc/customizer.php:1207
+msgid "Edit Section Short Heading"
+msgstr ""
+
+#: revolution/inc/customizer.php:1208
+msgid "Edit feature section short heading"
+msgstr ""
+
+#: revolution/inc/customizer.php:1228
+msgid "Edit Section Heading"
+msgstr ""
+
+#: revolution/inc/customizer.php:1229
+msgid "Edit feature section heading"
+msgstr ""
+
+#: revolution/inc/customizer.php:1248
+msgid "Number Of Tab to Show"
+msgstr ""
+
+#: revolution/inc/customizer.php:1249
+msgid "Number Of Tab to Show."
+msgstr ""
+
+#: revolution/inc/customizer.php:1278
+msgid "Edit Project Image "
+msgstr ""
+
+#: revolution/inc/customizer.php:1279
+msgid "Edit the project image."
+msgstr ""
+
+#: revolution/inc/customizer.php:1299
+msgid "Edit Project Title "
+msgstr ""
+
+#: revolution/inc/customizer.php:1300
+msgid "Edit the project name."
+msgstr ""
+
+#: revolution/inc/customizer.php:1320
+msgid "Edit Project Text "
+msgstr ""
+
+#: revolution/inc/customizer.php:1321
+msgid "Edit the project text."
+msgstr ""
+
+#: revolution/inc/customizer.php:1377
+msgid "Footer Options"
+msgstr ""
+
+#: revolution/inc/customizer.php:1395
+msgid "Enable Footer"
+msgstr ""
+
+#: revolution/inc/customizer.php:1396
+msgid "Checked to show Footer"
+msgstr ""
+
+#: revolution/inc/customizer.php:1410
+msgid "Footer Background Image"
+msgstr ""
+
+#: revolution/inc/customizer.php:1428
+msgid "Enable Footer Social Menu"
+msgstr ""
+
+#: revolution/inc/customizer.php:1429
+msgid "Checked to show the footer social menu. Go to Dashboard >> Appearance >> Menus >> Create New Menu >> Add Custom Link >> Add Social Menu >> Checked Social Menu >> Save Menu."
+msgstr ""
+
+#: revolution/inc/customizer.php:1448
+msgid "Enable Go To Top"
+msgstr ""
+
+#: revolution/inc/customizer.php:1449
+msgid "Checked to enable Go To Top option."
+msgstr ""
+
+#: revolution/inc/customizer.php:1464
+msgid "Go To Top Positions"
+msgstr ""
+
+#: revolution/inc/customizer.php:1485
+msgid "Edit Copyright Text"
+msgstr ""
+
+#: revolution/inc/customizer.php:1486
+msgid "Edit the Footer Copyright Section."
+msgstr ""
+
+#: revolution/inc/customizer.php:1592
+msgid "Buy Pro"
+msgstr ""
+
+#: revolution/inc/customizer.php:1599
+msgid "Lite Documentation"
+msgstr ""
+
+#: revolution/inc/customizer.php:1600
+msgid "Instruction"
+msgstr ""
+
+#: revolution/inc/customizer.php:1606
+msgid "Pro Theme Demo"
+msgstr ""
+
+#: revolution/inc/customizer.php:1607
+msgid "Live Preview"
+msgstr ""
+
+#: revolution/inc/fontawesome-change.php:24
+msgctxt "placeholder"
+msgid "Search Icon"
+msgstr ""
+
+#. translators: %s: post date.
+#: revolution/inc/template-tags.php:26
+msgid "<strong>Posted on:</strong> %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: revolution/inc/template-tags.php:38
+msgctxt "post author"
+msgid "- %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: revolution/inc/template-tags.php:52
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: revolution/inc/template-tags.php:55
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: revolution/inc/template-tags.php:59
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: revolution/inc/template-tags.php:62
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: revolution/inc/template-tags.php:72
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: revolution/inc/template-tags.php:89
+#: revolution/template-parts/content-page.php:38
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: revolution/template-parts/content-audio.php:103
+#: revolution/template-parts/content-audio.php:115
+#: revolution/template-parts/content-gallery.php:87
+#: revolution/template-parts/content-gallery.php:99
+#: revolution/template-parts/content-image.php:108
+#: revolution/template-parts/content-image.php:120
+#: revolution/template-parts/content-search.php:74
+#: revolution/template-parts/content-search.php:86
+#: revolution/template-parts/content-video.php:104
+#: revolution/template-parts/content-video.php:116
+#: revolution/template-parts/content.php:74
+#: revolution/template-parts/content.php:86
+msgid "Post Tags: "
+msgstr ""
+
+#: revolution/template-parts/content-audio.php:177
+#: revolution/template-parts/content-audio.php:180
+#: revolution/template-parts/content-gallery.php:161
+#: revolution/template-parts/content-gallery.php:164
+#: revolution/template-parts/content-image.php:148
+#: revolution/template-parts/content-image.php:151
+#: revolution/template-parts/content-search.php:148
+#: revolution/template-parts/content-search.php:151
+#: revolution/template-parts/content-video.php:178
+#: revolution/template-parts/content-video.php:181
+#: revolution/template-parts/content.php:148
+#: revolution/template-parts/content.php:151
+msgid "Continue Reading...."
+msgstr ""
+
+#: revolution/template-parts/content-audio.php:189
+#: revolution/template-parts/content-gallery.php:173
+#: revolution/template-parts/content-image.php:160
+#: revolution/template-parts/content-page.php:24
+#: revolution/template-parts/content-search.php:160
+#: revolution/template-parts/content-video.php:190
+#: revolution/template-parts/content.php:160
+msgid "Pages:"
+msgstr ""
+
+#: revolution/template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: revolution/template-parts/content-none.php:23
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: revolution/template-parts/content-none.php:36
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: revolution/template-parts/content-none.php:43
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:26
+#: search.php:74
+#: search.php:120
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:28
+#: single.php:66
+#: single.php:99
+msgid "Previous:"
+msgstr ""
+
+#: single.php:29
+#: single.php:67
+#: single.php:100
+msgid "Next:"
+msgstr ""
