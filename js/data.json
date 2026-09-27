@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "marca": "Yamaha",
+    "modelo": "MT-03",
+    "tipo": "deportiva",
+    "precio": 5200,
+    "imagen": "https://placehold.co/400x300?text=MT-03",
+    "descripcion": "Motocicleta deportiva de 321cc, ideal para ciudad y carretera."
+  },
+  {
+    "id": 2,
+    "marca": "Honda",
+    "modelo": "CB190R",
+    "tipo": "urbana",
+    "precio": 3100,
+    "imagen": "https://placehold.co/400x300?text=CB190R",
+    "descripcion": "Motocicleta urbana ágil y económica, perfecta para el día a día."
+  },
+  {
+    "id": 3,
+    "marca": "Suzuki",
+    "modelo": "GSX-S150",
+    "tipo": "deportiva",
+    "precio": 4800,
+    "imagen": "https://placehold.co/400x300?text=GSX-S150",
+    "descripcion": "Motocicleta deportiva ligera con diseño agresivo."
+  },
+  {
+    "id": 4,
+    "marca": "Bajaj",
+    "modelo": "Pulsar NS200",
+    "tipo": "deportiva",
+    "precio": 3900,
+    "imagen": "https://placehold.co/400x300?text=NS200",
+    "descripcion": "Motocicleta naked con gran relación precio-potencia."
+  },
+  {
+    "id": 5,
+    "marca": "Honda",
+    "modelo": "XR150L",
+    "tipo": "trabajo",
+    "precio": 2800,
+    "imagen": "https://placehold.co/400x300?text=XR150L",
+    "descripcion": "Motocicleta todo terreno resistente para trabajo y aventura."
+  },
+  {
+    "id": 6,
+    "marca": "Yamaha",
+    "modelo": "XTZ125",
+    "tipo": "trabajo",
+    "precio": 2600,
+    "imagen": "https://placehold.co/400x300?text=XTZ125",
+    "descripcion": "Motocicleta versátil ideal para caminos irregulares."
+  },
+  {
+    "id": 7,
+    "marca": "Kawasaki",
+    "modelo": "Ninja 300",
+    "tipo": "deportiva",
+    "precio": 6200,
+    "imagen": "https://placehold.co/400x300?text=Ninja+300",
+    "descripcion": "Motocicleta deportiva de alto rendimiento con carenado completo."
+  },
+  {
+    "id": 8,
+    "marca": "Honda",
+    "modelo": "Wave 110",
+    "tipo": "urbana",
+    "precio": 1900,
+    "imagen": "https://placehold.co/400x300?text=Wave+110",
+    "descripcion": "Motocicleta económica y de bajo consumo, ideal para ciudad."
+  }
+]

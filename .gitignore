@@ -30,3 +30,6 @@ build/
 # Archivos de caché del sistema operativo que no aportan al código.
 .DS_Store
 Thumbs.db
+
+## Se ignora el archivo de prueba catalogo-test.hml
+catalogo-test.html
