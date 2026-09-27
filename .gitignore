@@ -1,0 +1,32 @@
+# ==========================================
+# JUSTIFICACIÓN DE ARCHIVOS IGNORADOS
+# ==========================================
+
+# 1. NODE.JS
+# Se ignora la carpeta node_modules porque contiene todas las dependencias
+# descargadas de internet, las cuales son muy pesadas y se pueden reinstalar
+# ejecutando 'npm install'. También se ignora .env por contener contraseñas locales.
+node_modules/
+.env
+
+# 2. PYTHON
+# Se ignoran las carpetas __pycache__ y los archivos .pyc porque son 
+# archivos binarios compilados automáticamente por Python en cada máquina.
+# También se ignoran los entornos virtuales (venv) porque son locales.
+__pycache__/
+*.pyc
+venv/
+env/
+
+# 3. JAVA
+# Se ignoran los archivos .class porque son el resultado de compilar el código
+# fuente (.java) y dependen de la máquina local. También se ignoran las carpetas 
+# de construcción como 'target/' (Maven) o 'build/' (Gradle).
+*.class
+target/
+build/
+
+# 4. SISTEMA OPERATIVO Y MAC
+# Archivos de caché del sistema operativo que no aportan al código.
+.DS_Store
+Thumbs.db
