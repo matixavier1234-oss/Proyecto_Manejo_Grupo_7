@@ -43,3 +43,19 @@ function renderizarMotos(motos) {
   `).join('');
 }
 
+// Configura el select de filtro por tipo
+function inicializarFiltros(motos) {
+  const filtro = document.getElementById('filtro-tipo');
+  if (!filtro) return;
+
+  filtro.addEventListener('change', (e) => {
+    const tipoSeleccionado = e.target.value;
+    const motosFiltradas = tipoSeleccionado === 'todas'
+      ? motos
+      : motos.filter(m => m.tipo === tipoSeleccionado);
+    renderizarMotos(motosFiltradas);
+  });
+}
+
+// Ejecuta todo cuando el HTML ya está cargado
+document.addEventListener('DOMContentLoaded', cargarCatalogo);
