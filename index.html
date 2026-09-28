@@ -4,15 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>MotoStore | Motocicletas</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
-    <link
-    rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -20,175 +14,120 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-
-                <a class="navbar-brand fw-bold" href="index.html">
-                    MotoStore
-                </a>
-
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarPrincipal"
-                    aria-controls="navbarPrincipal"
-                    aria-expanded="false"
-                    aria-label="Mostrar navegación">
-
+                <a class="navbar-brand fw-bold" href="index.html">MotoStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPrincipal" aria-controls="navbarPrincipal" aria-expanded="false" aria-label="Mostrar navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarPrincipal">
-
+                <div class="collapse navbar-collapse" id="navbarPrincipal">
                     <ul class="navbar-nav ms-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">
-                                Inicio
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#catalogo">
-                                Motos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">
-                                Servicios
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#nosotros">
-                                Nosotros
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">
-                                Contacto
-                            </a>
-                        </li>
-
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#catalogo">Motos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                     </ul>
-
-                    <a href="#catalogo" class="btn btn-danger ms-lg-3">
-                        Ver motos
-                    </a>
-
+                    <a href="#catalogo" class="btn btn-danger ms-lg-3">Ver motos</a>
                 </div>
-
             </div>
         </nav>
     </header>
 
-
     <main>
-
-    <section id="hero" class="hero-principal">
-        <div class="hero-overlay">
-            <div class="container">
-                <div class="hero-contenido">
-
-                    <h6>Encuentra tu moto ideal</h6>
-
-                    <h1>
-                        Vive la experiencia de conducir la motocicleta perfecta
-                    </h1>
-
-                    <p>
-                        Explora nuestro catalogo y conoce diferentes modelos
-                        disponibles para ti.
-                    </p>
-
-                    <a href="#catalogo" class="btn btn-danger" aria-label="Ver catalogo de motocicletas">
-                        Ver motos
-                    </a>
-
+        <section id="hero" class="hero-principal">
+            <div class="hero-overlay">
+                <div class="container">
+                    <div class="hero-contenido">
+                        <h6>Encuentra tu moto ideal</h6>
+                        <h1>Vive la experiencia de conducir la motocicleta perfecta</h1>
+                        <p>Explora nuestro catalogo y conoce diferentes modelos disponibles para ti.</p>
+                        <a href="#catalogo" class="btn btn-danger" aria-label="Ver catalogo de motocicletas">Ver motos</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Los modulos del proyecto se integraran aqui -->
-    <section id="detalle-producto" class="container py-5 d-none">
-        <div id="contenido-detalle-moto" class="row">
-            <!-- Columna de la imagen -->
-            <div class="col-md-6 mb-4 mb-md-0">
-                <img id="detalle-imagen" src="" alt="Imagen de la moto" class="img-fluid rounded shadow w-100">
+        <!-- SECCIÓN DE CATÁLOGO (Ya integrada) -->
+        <section id="catalogo" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Nuestro catálogo</h2>
+                <div class="mb-4">
+                    <label for="filtro-tipo" class="form-label">Filtrar por tipo:</label>
+                    <select id="filtro-tipo" class="form-select" style="max-width: 250px;">
+                        <option value="todas">Todas</option>
+                        <option value="deportiva">Deportiva</option>
+                        <option value="urbana">Urbana</option>
+                        <option value="trabajo">Trabajo</option>
+                    </select>
+                </div>
+                <!-- Contenedor donde JS inyecta las motos -->
+                <div id="catalogo-container" class="row"></div>
             </div>
-            
-            <!-- Columna de la información -->
-            <div class="col-md-6">
-                <h2 id="detalle-marca-modelo" class="fw-bold display-5"></h2>
-                <span id="detalle-tipo" class="badge bg-secondary mb-3 fs-6 text-uppercase"></span>
-                <h3 id="detalle-precio" class="text-danger fw-bold mb-4"></h3>
-                
-                <h4 class="h5 fw-bold">Descripción</h4>
-                <p id="detalle-descripcion" class="text-secondary"></p>
-                
-                <p class="mt-4"><strong>Unidades en stock: </strong><span id="detalle-stock"></span></p>
-                
-                <!-- Botón de carrito simulado (Benjamín le dará funcionalidad después) -->
-                <button id="btn-agregar-carrito" class="btn btn-success btn-lg mt-2 w-100">
-                    Añadir al carrito
-                </button>
-            </div>
-        </div>
-        <button id="btn-volver-catalogo" class="btn btn-outline-dark mt-4">
-            &larr; Volver al catálogo
-        </button>
-    </section>
+        </section>
 
+        <!-- SECCIÓN DE DETALLE DE PRODUCTO -->
+        <section id="detalle-producto" class="container py-5 d-none">
+            <div id="contenido-detalle-moto" class="row">
+                <!-- Columna de la imagen -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img id="detalle-imagen" src="" alt="Imagen de la moto" class="img-fluid rounded shadow w-100">
+                </div>
+                
+                <!-- Columna de la información -->
+                <div class="col-md-6">
+                    <h2 id="detalle-marca-modelo" class="fw-bold display-5"></h2>
+                    <span id="detalle-tipo" class="badge bg-secondary mb-3 fs-6 text-uppercase"></span>
+                    <h3 id="detalle-precio" class="text-danger fw-bold mb-4"></h3>
+                    
+                    <h4 class="h5 fw-bold">Descripción</h4>
+                    <p id="detalle-descripcion" class="text-secondary"></p>
+                    
+                    <p class="mt-4"><strong>Unidades en stock: </strong><span id="detalle-stock"></span></p>
+                    
+                    <!-- Botón de carrito simulado -->
+                    <button id="btn-agregar-carrito" class="btn btn-success btn-lg mt-2 w-100">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </div>
+            <button id="btn-volver-catalogo" class="btn btn-outline-dark mt-4">
+                &larr; Volver al catálogo
+            </button>
+        </section>
     </main>
 
     <footer>
-    <div class="container py-4">
-        <div class="row">
-
-            <div class="col-md-4 mb-3">
-                <h5>MotoStore</h5>
-                <p>
-                    Proyecto web para la visualizacion y gestion de motocicletas.
-                </p>
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>MotoStore</h5>
+                    <p>Proyecto web para la visualizacion y gestion de motocicletas.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#catalogo">Motos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p>Ambato - Ecuador</p>
+                    <p>099 000 0000</p>
+                    <p>contacto@motostore.com</p>
+                </div>
             </div>
-
-            <div class="col-md-4 mb-3">
-                <h5>Enlaces</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#catalogo">Motos</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                <h5>Contacto</h5>
-                <p>Ambato - Ecuador</p>
-                <p>099 000 0000</p>
-                <p>contacto@motostore.com</p>
-            </div>
-
+            <hr>
+            <p class="text-center mb-0">2026 MotoStore - Proyecto academico</p>
         </div>
+    </footer>
 
-        <hr>
-
-        <p class="text-center mb-0">
-            2026 MotoStore - Proyecto academico
-        </p>
-    </div>
-</footer>
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/catalogo.js"></script>
     <script src="js/detalle.js"></script>
-</body>
 
+</body>
 </html>
