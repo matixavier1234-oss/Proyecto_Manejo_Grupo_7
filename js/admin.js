@@ -17,6 +17,24 @@ function crearCelda(texto, clase = '') {
     return celda;
 }
 
+function crearCeldaMotocicleta(moto) {
+    const celda = document.createElement('td');
+    const contenedor = document.createElement('div');
+    const imagen = document.createElement('img');
+    const nombre = document.createElement('span');
+
+    contenedor.className = 'admin-vehicle';
+    imagen.className = 'admin-vehicle__image';
+    imagen.src = moto.imagen;
+    imagen.alt = '';
+    imagen.loading = 'lazy';
+    nombre.className = 'fw-semibold';
+    nombre.textContent = `${moto.marca} ${moto.modelo}`;
+    contenedor.append(imagen, nombre);
+    celda.appendChild(contenedor);
+    return celda;
+}
+
 function obtenerEstado(stock) {
     if (stock === 0) return { texto: 'Agotado', clase: 'text-bg-danger' };
     if (stock <= 3) return { texto: 'Stock bajo', clase: 'text-bg-warning' };
@@ -60,7 +78,7 @@ function renderizarInventario() {
         const estado = obtenerEstado(moto.stock);
 
         fila.appendChild(crearCelda(moto.id));
-        fila.appendChild(crearCelda(`${moto.marca} ${moto.modelo}`, 'fw-semibold'));
+        fila.appendChild(crearCeldaMotocicleta(moto));
         fila.appendChild(crearCelda(moto.tipo));
         fila.appendChild(crearCelda(formatearPrecio(moto.precio)));
         fila.appendChild(crearCelda(moto.stock));
@@ -130,11 +148,33 @@ function mostrarDetallePedido(pedido) {
 
 function crearBotonAccion(texto, clase, accion) {
     const boton = document.createElement('button');
+    const iconos = {
+        Editar: 'bi-pencil',
+        Eliminar: 'bi-trash3',
+        'Ver detalle': 'bi-eye'
+    };
+    const icono = document.createElement('i');
+    const etiqueta = document.createElement('span');
+
     boton.className = `btn btn-sm ${clase} me-1`;
     boton.type = 'button';
-    boton.textContent = texto;
+    boton.setAttribute('aria-label', texto);
+    icono.className = `bi ${iconos[texto] || 'bi-arrow-right'} me-1`;
+    etiqueta.textContent = texto;
+    boton.append(icono, etiqueta);
     boton.addEventListener('click', accion);
     return boton;
+}
+
+function actualizarResumen() {
+    const stockBajo = inventario.filter((moto) => moto.stock <= 3).length;
+    const valorInventario = inventario.reduce((total, moto) => total + (moto.precio * moto.stock), 0);
+    const pedidosActivos = pedidos.filter((pedido) => ['pendiente', 'procesando'].includes(pedido.estado)).length;
+
+    document.getElementById('resumen-inventario').textContent = inventario.length;
+    document.getElementById('resumen-stock-bajo').textContent = stockBajo;
+    document.getElementById('resumen-pedidos').textContent = pedidosActivos;
+    document.getElementById('resumen-valor').textContent = formatearPrecio(valorInventario);
 }
 
 function guardarInventario() {
@@ -180,6 +220,7 @@ function eliminarMoto(id) {
     inventario = inventario.filter((elemento) => elemento.id !== id);
     guardarInventario();
     renderizarInventario();
+    actualizarResumen();
 }
 
 function guardarMoto(evento) {
@@ -203,6 +244,7 @@ function guardarMoto(evento) {
     }
     guardarInventario();
     renderizarInventario();
+    actualizarResumen();
     modalMoto.hide();
 }
 
@@ -250,6 +292,7 @@ async function inicializarPanel() {
         await cargarPedidos();
         cargarEstadosPedido();
         renderizarPedidos();
+        actualizarResumen();
     } catch (error) {
         const cuerpoTabla = document.getElementById('tabla-inventario');
         cuerpoTabla.replaceChildren();
