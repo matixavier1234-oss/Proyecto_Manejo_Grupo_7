@@ -90,32 +90,47 @@
 
     <main>
 
-    <section id="hero" class="hero-principal">
-        <div class="hero-overlay">
-            <div class="container">
-                <div class="hero-contenido">
+        <section id="hero" class="hero-principal">
+            <div class="hero-overlay">
+                <div class="container">
+                    <div class="hero-contenido">
 
-                    <h6>Encuentra tu moto ideal</h6>
+                        <h6>Encuentra tu moto ideal</h6>
 
-                    <h1>
-                        Vive la experiencia de conducir la motocicleta perfecta
-                    </h1>
+                        <h1>
+                            Vive la experiencia de conducir la motocicleta perfecta
+                        </h1>
 
-                    <p>
-                        Explora nuestro catalogo y conoce diferentes modelos
-                        disponibles para ti.
-                    </p>
+                        <p>
+                            Explora nuestro catalogo y conoce diferentes modelos
+                            disponibles para ti.
+                        </p>
 
-                    <a href="#catalogo" class="btn btn-danger" aria-label="Ver catalogo de motocicletas">
-                        Ver motos
-                    </a>
+                        <a href="#catalogo" class="btn btn-danger" aria-label="Ver catalogo de motocicletas">
+                            Ver motos
+                        </a>
 
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Los modulos del proyecto se integraran aqui -->
+        <!-- AQUÍ REEMPLAZAMOS EL COMENTARIO DE ÁNGEL POR TU CATÁLOGO -->
+        <section id="catalogo" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Nuestro catálogo</h2>
+                <div class="mb-4">
+                    <label for="filtro-tipo" class="form-label">Filtrar por tipo:</label>
+                    <select id="filtro-tipo" class="form-select" style="max-width: 250px;">
+                        <option value="todas">Todas</option>
+                        <option value="deportiva">Deportiva</option>
+                        <option value="urbana">Urbana</option>
+                        <option value="trabajo">Trabajo</option>
+                    </select>
+                </div>
+                <div id="catalogo-container" class="row"></div>
+            </div>
+        </section>
 
     </main>
 
@@ -123,6 +138,9 @@
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
+    
+    <!-- AQUÍ SE AGREGA TU SCRIPT COMO INDICABA EL PASO 3 -->
+    <script src="js/catalogo.js"></script>
 
 </body>
 
