@@ -27,6 +27,16 @@ body {
     font-weight: 600;
 }
 
+.hero-principal {
+    min-height: 620px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.80),
+        rgba(0, 0, 0, 0.80)
+    );
+    display: flex;
+    align-items: center;
+}
+
 .hero-overlay {
     width: 100%;
 }
