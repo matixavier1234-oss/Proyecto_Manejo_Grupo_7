@@ -5,6 +5,7 @@
     "modelo": "MT-03",
     "tipo": "deportiva",
     "precio": 5200,
+    "stock": 7,
     "imagen": "https://placehold.co/400x300?text=MT-03",
     "descripcion": "Motocicleta deportiva de 321cc, ideal para ciudad y carretera."
   },
@@ -14,6 +15,7 @@
     "modelo": "CB190R",
     "tipo": "urbana",
     "precio": 3100,
+    "stock": 12,
     "imagen": "https://placehold.co/400x300?text=CB190R",
     "descripcion": "Motocicleta urbana ágil y económica, perfecta para el día a día."
   },
@@ -23,6 +25,7 @@
     "modelo": "GSX-S150",
     "tipo": "deportiva",
     "precio": 4800,
+    "stock": 4,
     "imagen": "https://placehold.co/400x300?text=GSX-S150",
     "descripcion": "Motocicleta deportiva ligera con diseño agresivo."
   },
@@ -32,6 +35,7 @@
     "modelo": "Pulsar NS200",
     "tipo": "deportiva",
     "precio": 3900,
+    "stock": 2,
     "imagen": "https://placehold.co/400x300?text=NS200",
     "descripcion": "Motocicleta naked con gran relación precio-potencia."
   },
@@ -41,6 +45,7 @@
     "modelo": "XR150L",
     "tipo": "trabajo",
     "precio": 2800,
+    "stock": 0,
     "imagen": "https://placehold.co/400x300?text=XR150L",
     "descripcion": "Motocicleta todo terreno resistente para trabajo y aventura."
   },
@@ -50,6 +55,7 @@
     "modelo": "XTZ125",
     "tipo": "trabajo",
     "precio": 2600,
+    "stock": 9,
     "imagen": "https://placehold.co/400x300?text=XTZ125",
     "descripcion": "Motocicleta versátil ideal para caminos irregulares."
   },
@@ -59,6 +65,7 @@
     "modelo": "Ninja 300",
     "tipo": "deportiva",
     "precio": 6200,
+    "stock": 3,
     "imagen": "https://placehold.co/400x300?text=Ninja+300",
     "descripcion": "Motocicleta deportiva de alto rendimiento con carenado completo."
   },
@@ -68,6 +75,7 @@
     "modelo": "Wave 110",
     "tipo": "urbana",
     "precio": 1900,
+    "stock": 15,
     "imagen": "https://placehold.co/400x300?text=Wave+110",
     "descripcion": "Motocicleta económica y de bajo consumo, ideal para ciudad."
   }
