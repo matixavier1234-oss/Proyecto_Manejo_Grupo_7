@@ -11,3 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+/*Cargar imagenes en slider */
+const heroSlides = document.querySelectorAll('.hero-slide');
+
+if (heroSlides.length > 0) {
+    let slideActual = 0;
+
+    setInterval(() => {
+        heroSlides[slideActual].classList.remove('active');
+
+        slideActual++;
+
+        if (slideActual >= heroSlides.length) {
+            slideActual = 0;
+        }
+
+        heroSlides[slideActual].classList.add('active');
+    }, 5000);
+}
