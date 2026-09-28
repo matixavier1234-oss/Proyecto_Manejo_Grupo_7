@@ -1,5 +1,6 @@
 const inventarioStorageKey = 'motostore-inventario';
 let inventario = [];
+let pedidos = [];
 let modalMoto;
 
 function formatearPrecio(precio) {
@@ -20,6 +21,16 @@ function obtenerEstado(stock) {
     if (stock === 0) return { texto: 'Agotado', clase: 'text-bg-danger' };
     if (stock <= 3) return { texto: 'Stock bajo', clase: 'text-bg-warning' };
     return { texto: 'Disponible', clase: 'text-bg-success' };
+}
+
+function obtenerEstadoPedido(estado) {
+    const estados = {
+        pendiente: { texto: 'Pendiente', clase: 'text-bg-warning' },
+        procesando: { texto: 'Procesando', clase: 'text-bg-info' },
+        enviado: { texto: 'Enviado', clase: 'text-bg-primary' },
+        entregado: { texto: 'Entregado', clase: 'text-bg-success' }
+    };
+    return estados[estado] || { texto: estado, clase: 'text-bg-secondary' };
 }
 
 function renderizarInventario() {
@@ -68,6 +79,53 @@ function renderizarInventario() {
         fila.appendChild(acciones);
         cuerpoTabla.appendChild(fila);
     });
+}
+
+function renderizarPedidos() {
+    const cuerpoTabla = document.getElementById('tabla-pedidos');
+    const estadoSeleccionado = document.getElementById('filtro-estado-pedido').value;
+    const pedidosFiltrados = estadoSeleccionado === 'todos'
+        ? pedidos
+        : pedidos.filter((pedido) => pedido.estado === estadoSeleccionado);
+
+    cuerpoTabla.replaceChildren();
+    document.getElementById('contador-pedidos').textContent = pedidosFiltrados.length;
+
+    if (pedidosFiltrados.length === 0) {
+        const filaVacia = document.createElement('tr');
+        const celdaVacia = crearCelda('No hay pedidos que coincidan con el filtro.', 'text-center text-secondary py-4');
+        celdaVacia.colSpan = 7;
+        filaVacia.appendChild(celdaVacia);
+        cuerpoTabla.appendChild(filaVacia);
+        return;
+    }
+
+    pedidosFiltrados.forEach((pedido) => {
+        const fila = document.createElement('tr');
+        const estado = obtenerEstadoPedido(pedido.estado);
+        fila.appendChild(crearCelda(pedido.id, 'fw-semibold'));
+        fila.appendChild(crearCelda(pedido.cliente));
+        fila.appendChild(crearCelda(new Date(`${pedido.fecha}T00:00:00`).toLocaleDateString('es-EC')));
+        fila.appendChild(crearCelda(pedido.items));
+        fila.appendChild(crearCelda(formatearPrecio(pedido.total)));
+
+        const estadoCelda = document.createElement('td');
+        const etiquetaEstado = document.createElement('span');
+        etiquetaEstado.className = `badge ${estado.clase}`;
+        etiquetaEstado.textContent = estado.texto;
+        estadoCelda.appendChild(etiquetaEstado);
+        fila.appendChild(estadoCelda);
+
+        const acciones = document.createElement('td');
+        acciones.className = 'text-end';
+        acciones.appendChild(crearBotonAccion('Ver detalle', 'btn-outline-secondary', () => mostrarDetallePedido(pedido)));
+        fila.appendChild(acciones);
+        cuerpoTabla.appendChild(fila);
+    });
+}
+
+function mostrarDetallePedido(pedido) {
+    window.alert(`Pedido ${pedido.id}\nCliente: ${pedido.cliente}\nProductos: ${pedido.items}\nTotal: ${formatearPrecio(pedido.total)}`);
 }
 
 function crearBotonAccion(texto, clase, accion) {
@@ -160,10 +218,28 @@ async function cargarInventario() {
     }
 }
 
+async function cargarPedidos() {
+    const respuesta = await fetch('js/pedidos.json');
+    if (!respuesta.ok) throw new Error('No se pudieron cargar los pedidos.');
+    pedidos = await respuesta.json();
+}
+
+function cargarEstadosPedido() {
+    const filtro = document.getElementById('filtro-estado-pedido');
+    const estados = [...new Set(pedidos.map((pedido) => pedido.estado))].sort();
+    estados.forEach((estado) => {
+        const opcion = document.createElement('option');
+        opcion.value = estado;
+        opcion.textContent = obtenerEstadoPedido(estado).texto;
+        filtro.appendChild(opcion);
+    });
+}
+
 async function inicializarPanel() {
     modalMoto = new bootstrap.Modal(document.getElementById('modal-moto'));
     document.getElementById('buscar-moto').addEventListener('input', renderizarInventario);
     document.getElementById('filtro-tipo-admin').addEventListener('change', renderizarInventario);
+    document.getElementById('filtro-estado-pedido').addEventListener('change', renderizarPedidos);
     document.getElementById('btn-nueva-moto').addEventListener('click', () => abrirFormulario());
     document.getElementById('formulario-moto').addEventListener('submit', guardarMoto);
 
@@ -171,6 +247,9 @@ async function inicializarPanel() {
         await cargarInventario();
         cargarTipos();
         renderizarInventario();
+        await cargarPedidos();
+        cargarEstadosPedido();
+        renderizarPedidos();
     } catch (error) {
         const cuerpoTabla = document.getElementById('tabla-inventario');
         cuerpoTabla.replaceChildren();
