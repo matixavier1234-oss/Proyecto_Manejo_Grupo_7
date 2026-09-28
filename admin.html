@@ -10,41 +10,91 @@
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="admin-page">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header class="admin-topbar">
+        <nav class="navbar navbar-dark">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">MotoStore</a>
-                <a class="btn btn-outline-light" href="index.html">Volver a la tienda</a>
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <span class="brand-mark"><i class="bi bi-speedometer2"></i></span>
+                    <span><strong>MotoStore</strong><small>Control Center</small></span>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="admin-live-status"><span></span> Sistema operativo</span>
+                    <a class="btn btn-sm btn-outline-light" href="index.html">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Ver tienda
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <main class="container py-4 py-lg-5">
-        <div class="admin-heading d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+    <main class="admin-shell container py-4 py-lg-5">
+        <div class="admin-heading d-flex flex-column flex-lg-row justify-content-between gap-4 mb-4">
             <div>
-                <p class="text-uppercase text-danger fw-semibold mb-2">Administración</p>
-                <h1 class="h2 mb-2">Gestión de inventario</h1>
-                <p class="text-secondary mb-0">Consulta y actualiza las motocicletas disponibles en la tienda.</p>
+                <p class="admin-kicker mb-2"><i class="bi bi-grid-1x2-fill me-2"></i>Operaciones / Panel administrativo</p>
+                <h1 class="display-6 mb-2">Centro de control</h1>
+                <p class="admin-heading__description mb-0">Inventario y pedidos en un solo lugar, con la información que necesitas para actuar.</p>
             </div>
-            <button class="btn btn-danger align-self-lg-end" id="btn-nueva-moto" type="button">
-                Agregar motocicleta
+            <button class="btn btn-danger admin-primary-action align-self-lg-end" id="btn-nueva-moto" type="button">
+                <i class="bi bi-plus-lg me-2"></i>Agregar motocicleta
             </button>
         </div>
+
+        <section class="admin-metrics row g-3 mb-4" aria-label="Resumen operativo">
+            <div class="col-6 col-xl-3">
+                <article class="metric-card metric-card--dark">
+                    <div class="metric-card__icon"><i class="bi bi-box-seam"></i></div>
+                    <p>Total inventario</p>
+                    <strong id="resumen-inventario">0</strong>
+                    <small>unidades registradas</small>
+                </article>
+            </div>
+            <div class="col-6 col-xl-3">
+                <article class="metric-card">
+                    <div class="metric-card__icon metric-card__icon--amber"><i class="bi bi-exclamation-triangle"></i></div>
+                    <p>Stock por revisar</p>
+                    <strong id="resumen-stock-bajo">0</strong>
+                    <small>unidades con alerta</small>
+                </article>
+            </div>
+            <div class="col-6 col-xl-3">
+                <article class="metric-card">
+                    <div class="metric-card__icon metric-card__icon--blue"><i class="bi bi-receipt"></i></div>
+                    <p>Pedidos activos</p>
+                    <strong id="resumen-pedidos">0</strong>
+                    <small>pendientes o en proceso</small>
+                </article>
+            </div>
+            <div class="col-6 col-xl-3">
+                <article class="metric-card">
+                    <div class="metric-card__icon metric-card__icon--green"><i class="bi bi-cash-stack"></i></div>
+                    <p>Valor inventario</p>
+                    <strong id="resumen-valor">$0</strong>
+                    <small>valor referencial</small>
+                </article>
+            </div>
+        </section>
 
         <section class="admin-panel" aria-labelledby="inventario-titulo">
             <div class="admin-panel__header d-flex flex-column flex-lg-row justify-content-between gap-3">
                 <div>
-                    <h2 class="h5 mb-1" id="inventario-titulo">Inventario</h2>
-                    <p class="text-secondary small mb-0"><span id="contador-motos">0</span> motocicletas registradas</p>
+                    <div class="admin-section-label"><i class="bi bi-boxes"></i><span>Catálogo</span></div>
+                    <h2 class="h5 mb-1" id="inventario-titulo">Inventario de motocicletas</h2>
+                    <p class="text-secondary small mb-0"><span id="contador-motos">0</span> resultados visibles</p>
                 </div>
                 <div class="admin-filters row g-2">
                     <div class="col-sm-auto">
                         <label class="visually-hidden" for="buscar-moto">Buscar motocicleta</label>
-                        <input class="form-control" id="buscar-moto" type="search" placeholder="Buscar por marca o modelo">
+                        <div class="admin-search">
+                            <i class="bi bi-search"></i>
+                            <input class="form-control" id="buscar-moto" type="search" placeholder="Buscar marca o modelo">
+                        </div>
                     </div>
                     <div class="col-sm-auto">
                         <label class="visually-hidden" for="filtro-tipo-admin">Filtrar por tipo</label>
@@ -55,7 +105,7 @@
                 </div>
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive admin-table-wrap">
                 <table class="table admin-table align-middle mb-0">
                     <thead>
                         <tr>
@@ -80,8 +130,9 @@
         <section class="admin-panel mt-4" aria-labelledby="pedidos-titulo">
             <div class="admin-panel__header d-flex flex-column flex-lg-row justify-content-between gap-3">
                 <div>
-                    <h2 class="h5 mb-1" id="pedidos-titulo">Pedidos</h2>
-                    <p class="text-secondary small mb-0"><span id="contador-pedidos">0</span> pedidos registrados</p>
+                    <div class="admin-section-label"><i class="bi bi-truck"></i><span>Fulfillment</span></div>
+                    <h2 class="h5 mb-1" id="pedidos-titulo">Seguimiento de pedidos</h2>
+                    <p class="text-secondary small mb-0"><span id="contador-pedidos">0</span> pedidos visibles</p>
                 </div>
                 <div class="col-sm-auto">
                     <label class="visually-hidden" for="filtro-estado-pedido">Filtrar por estado</label>
@@ -91,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive admin-table-wrap">
                 <table class="table admin-table align-middle mb-0">
                     <thead>
                         <tr>

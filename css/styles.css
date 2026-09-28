@@ -413,29 +413,206 @@ footer p {
 
 .admin-page {
     min-height: 100vh;
+    color: #17212b;
+    background: #eef1f4;
+}
+
+.admin-topbar {
+    background: #17212b;
+    border-bottom: 3px solid #e3523f;
+}
+
+.admin-topbar .navbar {
+    padding: 0.9rem 0;
+}
+
+.admin-topbar .navbar-brand {
+    font-size: 1.05rem;
+    letter-spacing: 0;
+}
+
+.admin-topbar .navbar-brand small {
+    display: block;
+    color: #aeb8c2;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.brand-mark {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: #17212b;
+    background: #f4b942;
+    border-radius: 6px;
+    place-items: center;
+}
+
+.admin-live-status {
+    color: #cbd3da;
+    font-size: 0.78rem;
+}
+
+.admin-live-status span {
+    display: inline-block;
+    width: 0.45rem;
+    height: 0.45rem;
+    margin-right: 0.4rem;
+    background: #5ac878;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(90, 200, 120, 0.14);
 }
 
 .admin-heading h1 {
-    color: #212529;
+    color: #17212b;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.admin-kicker,
+.admin-section-label {
+    color: #d44738;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.admin-heading__description {
+    max-width: 42rem;
+    color: #65717c;
+}
+
+.admin-primary-action {
+    padding: 0.75rem 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 6px 14px rgba(211, 65, 49, 0.2);
+}
+
+.admin-metrics {
+    border-top: 1px solid #dce2e7;
+    padding-top: 1.25rem;
+}
+
+.metric-card {
+    min-height: 9rem;
+    padding: 1.1rem;
+    background: #ffffff;
+    border: 1px solid #dce2e7;
+    border-radius: 8px;
+    box-shadow: 0 5px 16px rgba(23, 33, 43, 0.05);
+}
+
+.metric-card--dark {
+    color: #ffffff;
+    background: #253746;
+    border-color: #253746;
+}
+
+.metric-card__icon {
+    display: grid;
+    width: 2.15rem;
+    height: 2.15rem;
+    margin-bottom: 0.85rem;
+    color: #ffffff;
+    background: #d44738;
+    border-radius: 6px;
+    place-items: center;
+}
+
+.metric-card__icon--amber {
+    color: #795500;
+    background: #f4c85e;
+}
+
+.metric-card__icon--blue {
+    color: #174b71;
+    background: #a7d4f3;
+}
+
+.metric-card__icon--green {
+    color: #1b6337;
+    background: #a9dfbd;
+}
+
+.metric-card p,
+.metric-card small {
+    display: block;
+    margin: 0;
+    color: #65717c;
+    font-size: 0.75rem;
+}
+
+.metric-card--dark p,
+.metric-card--dark small {
+    color: #bdc8d0;
+}
+
+.metric-card strong {
+    display: block;
+    margin: 0.15rem 0;
+    color: #17212b;
+    font-size: 1.55rem;
+    line-height: 1.1;
+}
+
+.metric-card--dark strong {
+    color: #ffffff;
 }
 
 .admin-panel {
     overflow: hidden;
     background-color: #ffffff;
-    border: 1px solid #dee2e6;
+    border: 1px solid #dce2e7;
     border-radius: 8px;
-    box-shadow: 0 0.25rem 0.75rem rgba(33, 37, 41, 0.06);
+    box-shadow: 0 6px 18px rgba(23, 33, 43, 0.055);
 }
 
 .admin-panel__header {
-    padding: 1.25rem;
-    border-bottom: 1px solid #dee2e6;
+    padding: 1.35rem 1.5rem;
+    border-bottom: 1px solid #e5e9ed;
+}
+
+.admin-section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.35rem;
+    color: #65717c;
+    font-size: 0.68rem;
+}
+
+.admin-section-label i {
+    color: #d44738;
+    font-size: 0.85rem;
+}
+
+.admin-search {
+    position: relative;
+}
+
+.admin-search i {
+    position: absolute;
+    top: 50%;
+    left: 0.8rem;
+    color: #8b98a4;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.admin-search .form-control {
+    min-width: 15rem;
+    padding-left: 2.25rem;
 }
 
 .admin-table thead th {
-    color: #495057;
+    color: #72808c;
+    background: #f7f8f9;
     font-size: 0.8rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -449,16 +626,67 @@ footer p {
     border-bottom: 0;
 }
 
-/* ADMIN MOVIL */
+.admin-table tbody tr {
+    transition: background-color 0.18s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: #fbf7f5;
+}
+
+.admin-table td:first-child,
+.admin-table th:first-child {
+    padding-left: 1.5rem;
+}
+
+.admin-table td:last-child,
+.admin-table th:last-child {
+    padding-right: 1.5rem;
+}
+
+.admin-table .btn {
+    font-weight: 600;
+}
+
+.admin-table .badge {
+    min-width: 5.25rem;
+    padding: 0.45rem 0.6rem;
+    font-weight: 600;
+}
 
 @media (max-width: 576px) {
+    .admin-live-status {
+        display: none;
+    }
+
+    .admin-topbar .navbar-brand small {
+        font-size: 0.58rem;
+    }
+
+    .admin-heading h1 {
+        font-size: 2rem;
+    }
+
     .admin-panel__header {
         padding: 1rem;
+    }
+
+    .admin-search .form-control {
+        min-width: 0;
     }
 
     .admin-table td,
     .admin-table th {
         padding: 0.75rem;
+    }
+    .admin-table td:first-child,
+    .admin-table th:first-child {
+        padding-left: 0.75rem;
+    }
+
+    .admin-table td:last-child,
+    .admin-table th:last-child {
+        padding-right: 0.75rem;
     }
 }
 
