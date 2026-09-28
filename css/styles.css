@@ -48,3 +48,19 @@ footer a:hover {
 footer p {
     margin-bottom: 8px;
 }
+
+/*Movil*/
+
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    footer ul {
+        padding-left: 0;
+    }
+}
