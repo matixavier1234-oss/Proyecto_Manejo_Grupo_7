@@ -5,6 +5,8 @@ body {
     background-color: #f5f5f5;
 }
 
+/* NAVBAR */
+
 .navbar {
     padding: 15px 0;
 }
@@ -26,6 +28,8 @@ body {
 .navbar .btn {
     font-weight: 600;
 }
+
+/* FOOTER */
 
 footer {
     background-color: #212529;
@@ -49,7 +53,7 @@ footer p {
     margin-bottom: 8px;
 }
 
-/*Movil*/
+/* FOOTER MOVIL */
 
 @media (max-width: 768px) {
     footer {
@@ -64,6 +68,70 @@ footer p {
         padding-left: 0;
     }
 }
+
+/* HERO */
+
+.hero-principal {
+    min-height: 620px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.80),
+        rgba(0, 0, 0, 0.80)
+    );
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    width: 100%;
+}
+
+.hero-contenido {
+    max-width: 650px;
+    color: white;
+    padding: 80px 0;
+}
+
+.hero-contenido h6 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-contenido h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-contenido p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.hero-contenido .btn {
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+/* HERO MOVIL */
+
+@media (max-width: 768px) {
+    .hero-principal {
+        min-height: 500px;
+        text-align: center;
+    }
+
+    .hero-contenido {
+        max-width: 100%;
+        padding: 60px 20px;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* ADMIN */
 
 .admin-page {
     min-height: 100vh;
@@ -102,6 +170,8 @@ footer p {
 .admin-table tbody tr:last-child td {
     border-bottom: 0;
 }
+
+/* ADMIN MOVIL */
 
 @media (max-width: 576px) {
     .admin-panel__header {
