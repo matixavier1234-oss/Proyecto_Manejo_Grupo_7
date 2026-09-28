@@ -1,61 +1,65 @@
-// Carga los datos del catálogo desde data.json
-async function cargarCatalogo() {
-  try {
-    const res = await fetch('js/data.json');
-    if (!res.ok) throw new Error('No se pudo cargar el catálogo');
-    const motos = await res.json();
-    renderizarMotos(motos);
-    inicializarFiltros(motos);
-  } catch (error) {
-    console.error(error);
-    const contenedor = document.getElementById('catalogo-container');
-    if (contenedor) {
-      contenedor.innerHTML = '<p class="text-danger">No se pudo cargar el catálogo de motocicletas.</p>';
-    }
-  }
+const motos = [
+    { id: 1, marca: "Bajaj", modelo: "Pulsar NS200", tipo: "urbana", precio: 3200, imagen: "img/Bajaj Pulsar NS200.jpg" },
+    { id: 2, marca: "Honda", modelo: "CB190R", tipo: "urbana", precio: 3500, imagen: "img/Honda CB190R.jpg" },
+    { id: 3, marca: "Honda", modelo: "Wave 110", tipo: "trabajo", precio: 1500, imagen: "img/Honda Wave 110.jpg" },
+    { id: 4, marca: "Honda", modelo: "XR150L", tipo: "trabajo", precio: 2800, imagen: "img/Honda XR150L.jpg" },
+    { id: 5, marca: "Kawasaki", modelo: "Ninja 300", tipo: "deportiva", precio: 6000, imagen: "img/Kawasaki Ninja 300.jpg" },
+    { id: 6, marca: "Suzuki", modelo: "GSX-S150", tipo: "deportiva", precio: 3000, imagen: "img/Suzuki GSX-S150.jpg" },
+    { id: 7, marca: "Yamaha", modelo: "MT-03", tipo: "deportiva", precio: 5500, imagen: "img/Yamaha MT-03.jpg" },
+    { id: 8, marca: "Yamaha", modelo: "XTZ125", tipo: "trabajo", precio: 2200, imagen: "img/Yamaha XTZ125.jpg" }
+];
+
+const contenedor = document.getElementById('catalogo-container');
+const filtro = document.getElementById('filtro-tipo');
+
+function mostrarMotos(motosMostrar) {
+    contenedor.innerHTML = '';
+
+    motosMostrar.forEach(moto => {
+        const tarjeta = `
+            <div class="col-12 col-sm-6 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <img 
+                        src="${moto.imagen}" 
+                        class="card-img-top img-moto" 
+                        alt="${moto.marca} ${moto.modelo}">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            ${moto.marca} ${moto.modelo}
+                        </h5>
+
+                        <p class="card-text text-muted">
+                            Tipo:
+                            <span class="text-capitalize">
+                                ${moto.tipo}
+                            </span>
+                        </p>
+
+                        <p class="card-text fw-bold text-danger">
+                            $${moto.precio}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        contenedor.innerHTML += tarjeta;
+    });
 }
 
-// Dibuja las tarjetas de motos en el contenedor
-function renderizarMotos(motos) {
-  const contenedor = document.getElementById('catalogo-container');
-  if (!contenedor) {
-    console.error('No se encontró el contenedor #catalogo-container');
-    return;
-  }
+mostrarMotos(motos);
 
-  if (motos.length === 0) {
-    contenedor.innerHTML = '<p>No hay motocicletas para mostrar.</p>';
-    return;
-  }
-
-  contenedor.innerHTML = motos.map(moto => `
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="${moto.imagen}" class="card-img-top" alt="${moto.marca} ${moto.modelo}">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">${moto.marca} ${moto.modelo}</h5>
-          <p class="card-text">${moto.descripcion}</p>
-          <p class="fw-bold">$${moto.precio}</p>
-          <a href="detalle.html?id=${moto.id}" class="btn btn-primary mt-auto">Ver detalle</a>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-// Configura el select de filtro por tipo
-function inicializarFiltros(motos) {
-  const filtro = document.getElementById('filtro-tipo');
-  if (!filtro) return;
-
-  filtro.addEventListener('change', (e) => {
+filtro.addEventListener('change', (e) => {
     const tipoSeleccionado = e.target.value;
-    const motosFiltradas = tipoSeleccionado === 'todas'
-      ? motos
-      : motos.filter(m => m.tipo === tipoSeleccionado);
-    renderizarMotos(motosFiltradas);
-  });
-}
 
-// Ejecuta todo cuando el HTML ya está cargado
-document.addEventListener('DOMContentLoaded', cargarCatalogo);
+    if (tipoSeleccionado === 'todas') {
+        mostrarMotos(motos);
+    } else {
+        const motosFiltradas = motos.filter(
+            moto => moto.tipo === tipoSeleccionado
+        );
+
+        mostrarMotos(motosFiltradas);
+    }
+});
