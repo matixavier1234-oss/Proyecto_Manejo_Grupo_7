@@ -39,6 +39,10 @@ function mostrarMotos(motosMostrar) {
                         <p class="card-text fw-bold text-danger">
                             $${moto.precio}
                         </p>
+
+                        <button class="btn btn-outline-danger w-100 mt-2" onclick="mostrarDetalleMoto(${moto.id})">
+                            Ver detalles
+                        </button>
                     </div>
                 </div>
             </div>
