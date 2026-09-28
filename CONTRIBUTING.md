@@ -11,7 +11,7 @@ Este documento define la estructura de colaboración para garantizar un código 
 
 ## 2. Flujo de Trabajo
 1. Actualiza tu entorno local: `git checkout develop` seguido de `git pull origin develop`.
-2. Crea tu rama de trabajo: `git checkout -b feature/nombre-de-tu-tarea`.
+2. Crea tu rama de trabajo: `git flow feature start nombre-de-tu-tarea`
 3. Desarrolla tu código realizando commits atómicos y descriptivos.
 4. Sube tu rama al repositorio remoto: `git push origin feature/nombre-de-tu-tarea`.
 
