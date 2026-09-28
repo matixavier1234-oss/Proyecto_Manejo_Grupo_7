@@ -1,0 +1,34 @@
+[
+  {
+    "id": "PED-001",
+    "cliente": "Ana Torres",
+    "fecha": "2026-09-25",
+    "total": 5200,
+    "estado": "pendiente",
+    "items": "Yamaha MT-03"
+  },
+  {
+    "id": "PED-002",
+    "cliente": "Carlos Mena",
+    "fecha": "2026-09-24",
+    "total": 3100,
+    "estado": "procesando",
+    "items": "Honda CB190R"
+  },
+  {
+    "id": "PED-003",
+    "cliente": "Sofía Ruiz",
+    "fecha": "2026-09-22",
+    "total": 6700,
+    "estado": "enviado",
+    "items": "Suzuki GSX-S150, casco"
+  },
+  {
+    "id": "PED-004",
+    "cliente": "Diego López",
+    "fecha": "2026-09-20",
+    "total": 1900,
+    "estado": "entregado",
+    "items": "Honda Wave 110"
+  }
+]
