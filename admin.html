@@ -76,6 +76,42 @@
                 </table>
             </div>
         </section>
+
+        <section class="admin-panel mt-4" aria-labelledby="pedidos-titulo">
+            <div class="admin-panel__header d-flex flex-column flex-lg-row justify-content-between gap-3">
+                <div>
+                    <h2 class="h5 mb-1" id="pedidos-titulo">Pedidos</h2>
+                    <p class="text-secondary small mb-0"><span id="contador-pedidos">0</span> pedidos registrados</p>
+                </div>
+                <div class="col-sm-auto">
+                    <label class="visually-hidden" for="filtro-estado-pedido">Filtrar por estado</label>
+                    <select class="form-select" id="filtro-estado-pedido">
+                        <option value="todos">Todos los estados</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table admin-table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Pedido</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Productos</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col" class="text-end">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-pedidos">
+                        <tr>
+                            <td class="text-center text-secondary py-4" colspan="7">Cargando pedidos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <div class="modal fade" id="modal-moto" tabindex="-1" aria-labelledby="modal-moto-titulo" aria-hidden="true">
