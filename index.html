@@ -227,9 +227,9 @@
 
     <main>
 
-        <section
-            id="catalogo"
-            class="py-5">
+        <!-- CATALOGO -->
+
+        <section id="catalogo" class="py-5">
 
             <div class="container">
 
@@ -277,6 +277,80 @@
                 </div>
 
             </div>
+
+        </section>
+
+        <!-- DETALLE DE PRODUCTO -->
+
+        <section
+            id="detalle-producto"
+            class="container py-5 d-none">
+
+            <div
+                id="contenido-detalle-moto"
+                class="row">
+
+                <div class="col-md-6 mb-4 mb-md-0">
+
+                    <img
+                        id="detalle-imagen"
+                        src=""
+                        alt="Imagen de la moto"
+                        class="img-fluid rounded shadow w-100">
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h2
+                        id="detalle-marca-modelo"
+                        class="fw-bold display-5">
+                    </h2>
+
+                    <span
+                        id="detalle-tipo"
+                        class="badge bg-secondary mb-3 fs-6 text-uppercase">
+                    </span>
+
+                    <h3
+                        id="detalle-precio"
+                        class="text-danger fw-bold mb-4">
+                    </h3>
+
+                    <h4 class="h5 fw-bold">
+                        Descripción
+                    </h4>
+
+                    <p
+                        id="detalle-descripcion"
+                        class="text-secondary">
+                    </p>
+
+                    <p class="mt-4">
+                        <strong>
+                            Unidades en stock:
+                        </strong>
+
+                        <span id="detalle-stock"></span>
+                    </p>
+
+                    <button
+                        id="btn-agregar-carrito"
+                        class="btn btn-success btn-lg mt-2 w-100">
+
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <button
+                id="btn-volver-catalogo"
+                class="btn btn-outline-dark mt-4">
+
+                &larr; Volver al catálogo
+            </button>
 
         </section>
 
@@ -376,6 +450,8 @@
     <script src="js/app.js"></script>
 
     <script src="js/catalogo.js"></script>
+
+    <script src="js/detalle.js"></script>
 
 </body>
 
