@@ -45,7 +45,11 @@
                             <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
                             <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                         </ul>
-                        <a href="#catalogo" class="btn btn-danger btn-menu d-lg-none">Ver motos</a>
+                        <!-- Botón para abrir el carrito -->
+                        <button class="btn btn-danger ms-lg-3 my-2 my-lg-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas" aria-controls="carritoOffcanvas">
+                            🛒 Carrito (<span id="contador-carrito">0</span>)
+                        </button>
+                        <a href="#catalogo" class="btn btn-danger btn-menu d-lg-none ms-2">Ver motos</a>
                     </div>
                 </nav>
             </div>
@@ -102,6 +106,33 @@
             </div>
             <button id="btn-volver-catalogo" class="btn btn-outline-dark mt-4">&larr; Volver al catálogo</button>
         </section>
+
+        <!-- OFFCANVAS - CARRITO DE COMPRAS (Módulo de Benjamín) -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoOffcanvasLabel">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title fw-bold" id="carritoOffcanvasLabel">Tu Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column">
+                
+                <!-- Lista de productos -->
+                <ul id="lista-carrito" class="list-group mb-auto">
+                    <li class="list-group-item text-center text-muted mt-4">
+                        El carrito está vacío
+                    </li>
+                </ul>
+                
+                <!-- Sección de totales y botones -->
+                <div class="mt-4 border-top pt-3">
+                    <div class="d-flex justify-content-between fw-bold mb-3 fs-5">
+                        <span>Total:</span>
+                        <span id="precio-total" class="text-danger">$0</span>
+                    </div>
+                    <button id="btn-vaciar-carrito" class="btn btn-outline-danger w-100 mb-2">Vaciar Carrito</button>
+                    <button id="btn-procesar-compra" class="btn btn-success w-100">Proceder al pago</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer id="contacto">
