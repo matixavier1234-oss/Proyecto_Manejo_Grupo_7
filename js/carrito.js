@@ -1,8 +1,13 @@
 // Módulo del carrito de compras
 console.log("Módulo del carrito cargado exitosamente.");
 
-// Estructura de datos principal
-let carrito = [];
+// 1. Intentamos recuperar el carrito guardado; si no hay nada, inicia vacío []
+let carrito = JSON.parse(localStorage.getItem('carrito_motostore')) || [];
+
+// Función para guardar el carrito en la memoria del navegador
+function guardarCarritoEnStorage() {
+    localStorage.setItem('carrito_motostore', JSON.stringify(carrito));
+}
 
 // Función para agregar una moto al carrito
 function agregarAlCarrito(idMoto, nombreMoto, precioMoto) {
@@ -13,6 +18,7 @@ function agregarAlCarrito(idMoto, nombreMoto, precioMoto) {
     };
 
     carrito.push(item);
+    guardarCarritoEnStorage(); // <-- Guardamos el cambio
     console.log(`[Carrito] Se agregó: ${nombreMoto}`);
 }
 
@@ -25,15 +31,17 @@ function calcularTotal() {
     return total;
 }
 
-// Función para eliminar una moto específica del carrito usando su ID
+// Función para eliminar una moto específica del carrito
 function eliminarDelCarrito(idMoto) {
     carrito = carrito.filter(item => item.id !== idMoto);
+    guardarCarritoEnStorage(); // <-- Guardamos el cambio
     console.log(`[Carrito] Se eliminó la moto con ID: ${idMoto}`);
 }
 
 // Función para vaciar completamente el carrito
 function vaciarCarrito() {
     carrito = [];
+    guardarCarritoEnStorage(); // <-- Guardamos el cambio
     console.log("[Carrito] El carrito ha sido vaciado.");
 }
 
@@ -41,20 +49,16 @@ function vaciarCarrito() {
 // CONEXIÓN CON LA INTERFAZ VISUAL (DOM)
 // ==========================================
 
-// Función para actualizar visualmente el panel lateral del carrito
 function actualizarInterfazCarrito() {
     const listaCarrito = document.getElementById('lista-carrito');
     const precioTotal = document.getElementById('precio-total');
     const contadorCarrito = document.getElementById('contador-carrito');
 
-    // 1. Limpiar la lista actual en pantalla
     listaCarrito.innerHTML = '';
 
-    // 2. Verificar si está vacío o tiene productos
     if (carrito.length === 0) {
         listaCarrito.innerHTML = '<li class="list-group-item text-center text-muted mt-4">El carrito está vacío</li>';
     } else {
-        // Recorrer el arreglo y crear un elemento visual para cada moto
         carrito.forEach(moto => {
             const li = document.createElement('li');
             li.className = 'list-group-item d-flex justify-content-between align-items-center';
@@ -69,16 +73,19 @@ function actualizarInterfazCarrito() {
         });
     }
 
-    // 3. Actualizar el precio total y el contador rojo de la barra superior
     precioTotal.textContent = '$' + calcularTotal();
     contadorCarrito.textContent = carrito.length;
 }
 
 // Conectar el botón de "Vaciar Carrito" del panel
-document.getElementById('btn-vaciar-carrito').addEventListener('click', () => {
-    vaciarCarrito();
-    actualizarInterfazCarrito();
-});
+const btnVaciar = document.getElementById('btn-vaciar-carrito');
+if (btnVaciar) {
+    btnVaciar.addEventListener('click', () => {
+        vaciarCarrito();
+        actualizarInterfazCarrito();
+    });
+}
+
 // ==========================================
 // INTEGRACIÓN CON EL BOTÓN DE LA PÁGINA
 // ==========================================
@@ -86,23 +93,22 @@ const btnAgregarPantalla = document.getElementById('btn-agregar-carrito');
 
 if (btnAgregarPantalla) {
     btnAgregarPantalla.addEventListener('click', () => {
-        // Leer el nombre que esté en la pantalla en ese momento
         const nombreObtenido = document.getElementById('detalle-marca-modelo').textContent || "Moto Seleccionada";
 
-        // ¡SOLUCIÓN! Borramos el signo $ y todas las comas (,) antes de convertir a número
-        const precioTexto = document.getElementById('detalle-precio').textContent.replace('$', '').replace(/,/g, '').trim();
-        const precioObtenido = parseFloat(precioTexto) || 0;
+        const precioTexto = document.getElementById('detalle-precio').textContent;
+        const precioLimpio = precioTexto.replace(/[\$,\.\s]/g, '');
+        const precioObtenido = parseInt(precioLimpio) || 0;
 
-        // Usamos un ID temporal aleatorio
         const idGenerado = Math.floor(Math.random() * 1000);
 
-        // Llamar a tus funciones
         agregarAlCarrito(idGenerado, nombreObtenido, precioObtenido);
         actualizarInterfazCarrito();
 
-        // Extra: Desplegar el carrito automáticamente para que el usuario vea su moto
         const panelCarrito = document.getElementById('carritoOffcanvas');
         const bsOffcanvas = bootstrap.Offcanvas.getInstance(panelCarrito) || new bootstrap.Offcanvas(panelCarrito);
         bsOffcanvas.show();
     });
 }
+
+// Inicializar la interfaz automáticamente al cargar la página
+actualizarInterfazCarrito();
