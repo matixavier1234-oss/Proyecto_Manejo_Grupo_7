@@ -40,12 +40,10 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.78) 0%,
-        rgba(0, 0, 0, 0.58) 45%,
-        rgba(0, 0, 0, 0.35) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.58) 45%,
+            rgba(0, 0, 0, 0.35) 100%);
 }
 
 .hero-slide.active {
@@ -264,13 +262,11 @@ body {
     width: 100%;
     height: 90px;
     background-color: #f5f5f5;
-    clip-path: polygon(
-        0 45%,
-        50% 100%,
-        100% 45%,
-        100% 100%,
-        0 100%
-    );
+    clip-path: polygon(0 45%,
+            50% 100%,
+            100% 45%,
+            100% 100%,
+            0 100%);
 }
 
 /* NAVBAR Y HERO MOVIL */
@@ -679,6 +675,7 @@ footer p {
     .admin-table th {
         padding: 0.75rem;
     }
+
     .admin-table td:first-child,
     .admin-table th:first-child {
         padding-left: 0.75rem;
@@ -714,12 +711,10 @@ footer p {
     position: relative;
     padding: 90px 0;
     overflow: hidden;
-    background: linear-gradient(
-        135deg,
-        #0d1014 0%,
-        #171b20 55%,
-        #212529 100%
-    );
+    background: linear-gradient(135deg,
+            #0d1014 0%,
+            #171b20 55%,
+            #212529 100%);
 }
 
 .sobre-contenido {
@@ -1125,7 +1120,7 @@ footer p {
     margin-bottom: 40px;
 }
 
-.equipo-encabezado > p {
+.equipo-encabezado>p {
     max-width: 520px;
     margin: 0;
     color: #6c757d;
@@ -1204,7 +1199,7 @@ footer p {
         display: block;
     }
 
-    .equipo-encabezado > p {
+    .equipo-encabezado>p {
         margin-top: 18px;
     }
 }
@@ -1555,4 +1550,33 @@ footer p {
         font-size: 2.35rem;
         letter-spacing: 0;
     }
+}
+
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-img-wrapper {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.08);
 }
