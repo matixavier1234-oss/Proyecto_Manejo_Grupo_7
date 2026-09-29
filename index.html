@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MotoStore | Motocicletas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -52,7 +53,7 @@
                         <!-- Botón para abrir el carrito -->
                         <button class="btn btn-danger ms-lg-3 my-2 my-lg-0" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#carritoOffcanvas" aria-controls="carritoOffcanvas">
-                            🛒 Carrito (<span id="contador-carrito">0</span>)
+                            🛒 <span id="contador-carrito">0</span>
                         </button>
                         <a href="#catalogo" class="btn btn-danger btn-menu d-lg-none ms-2">Ver motos</a>
                     </div>
@@ -62,7 +63,10 @@
                 <div class="container">
                     <div class="hero-contenido">
                         <h6>Encuentra tu moto ideal</h6>
-                        <h1>Vive la experiencia de conducir la motocicleta perfecta</h1>
+                        <h1>
+                            Vive la experiencia de conducir la motocicleta
+                            <span>perfecta</span>
+                        </h1>
                         <p>Explora nuestro catalogo y descubre diferentes modelos de motocicletas disponibles para ti.
                         </p>
                         <div class="hero-botones">
@@ -81,15 +85,31 @@
         <!-- CATALOGO -->
         <section id="catalogo" class="py-5">
             <div class="container">
-                <h2 class="mb-4">Nuestro catálogo</h2>
-                <div class="mb-4">
-                    <label for="filtro-tipo" class="form-label">Filtrar por tipo:</label>
-                    <select id="filtro-tipo" class="form-select" style="max-width: 250px;">
-                        <option value="todas">Todas</option>
-                        <option value="deportiva">Deportiva</option>
-                        <option value="urbana">Urbana</option>
-                        <option value="trabajo">Trabajo</option>
-                    </select>
+                <div class="catalogo-encabezado">
+                    <div class="catalogo-texto">
+                        <span class="catalogo-etiqueta">NUESTRO CATÁLOGO</span>
+                        <h2 class="catalogo-titulo">
+                            Descubre nuestras
+                            <span>motocicletas</span>
+                        </h2>
+
+                        <p>
+                            Explora diferentes modelos y encuentra la motocicleta
+                            que mejor se adapte a tu estilo y necesidades.
+                        </p>
+                    </div>
+
+                    <div class="catalogo-filtro">
+                        <label for="filtro-tipo" class="form-label">
+                            Filtrar por tipo
+                        </label>
+                        <select id="filtro-tipo" class="form-select">
+                            <option value="todas">Todas</option>
+                            <option value="deportiva">Deportiva</option>
+                            <option value="urbana">Urbana</option>
+                            <option value="trabajo">Trabajo</option>
+                        </select>
+                    </div>
                 </div>
                 <div id="catalogo-container" class="row"></div>
             </div>
@@ -204,9 +224,7 @@
 
                         <div class="sobre-card">
 
-                            <div class="sobre-icono">
-                                ★
-                            </div>
+                            <div class="valor-icono"><i class="bi bi-award-fill"></i></div>
 
                             <h4>
                                 Calidad
@@ -226,9 +244,7 @@
 
                         <div class="sobre-card">
 
-                            <div class="sobre-icono">
-                                👥
-                            </div>
+                            <div class="valor-icono"><i class="bi bi-lightning-charge-fill"></i></div>
 
                             <h4>
                                 Pasión
@@ -248,9 +264,7 @@
 
                         <div class="sobre-card">
 
-                            <div class="sobre-icono">
-                                ✓
-                            </div>
+                            <div class="valor-icono"><i class="bi bi-shield-check"></i></div>
 
                             <h4>
                                 Confianza
@@ -263,6 +277,209 @@
 
                         </div>
 
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="servicios">
+            <div class="container">
+
+                <div class="seccion-encabezado">
+                    <span class="seccion-etiqueta">NUESTROS SERVICIOS</span>
+
+                    <h2 class="servicios-titulo">
+                        Todo lo que necesitas
+                        <span>en un solo lugar</span>
+                    </h2>
+
+                    <p>
+                        Te acompañamos antes, durante y después de elegir
+                        tu motocicleta.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="servicio-card">
+                            <div class="servicio-icono"><i class="bi bi-person-check-fill"></i></div>
+                            <h3>Asesoría personalizada</h3>
+                            <p>
+                                Te ayudamos a encontrar la motocicleta ideal
+                                para tus necesidades y estilo de vida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="servicio-card">
+                            <div class="servicio-icono"><i class="bi bi-tools"></i></div>
+                            <h3>Mantenimiento</h3>
+                            <p>
+                                Información y recomendaciones para mantener
+                                tu motocicleta en excelentes condiciones.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="servicio-card">
+                            <div class="servicio-icono"><i class="bi bi-truck"></i></div>
+                            <h3>Entrega segura</h3>
+                            <p>
+                                Procesos de entrega confiables para que recibas
+                                tu motocicleta de forma segura.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="servicio-card">
+                            <div class="servicio-icono"><i class="bi bi-credit-card-2-front-fill"></i></div>
+                            <h3>Opciones de pago</h3>
+                            <p>
+                                Diferentes alternativas para facilitar
+                                el proceso de compra de tu motocicleta.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EQUIPO -->
+        <section id="equipo" class="equipo-trabajo">
+            <div class="container">
+
+                <div class="equipo-encabezado">
+                    <div>
+                        <span class="seccion-etiqueta">NUESTRO GRUPO DE TRABAJO</span>
+
+                        <h2 class="equipo-titulo">
+                            Conoce a nuestro equipo
+                        </h2>
+                    </div>
+
+                    <p>
+                        Somos estudiantes de Ingeniería de Software que desarrollamos
+                        MotoStore aplicando trabajo colaborativo, Git y GitFlow.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- MATIAS -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="equipo-card">
+                            <div class="equipo-avatar">
+                                <img src="img/equipo/matias-mena.png" alt="Matías Mena">
+                            </div>
+
+                            <div>
+                                <h3>Matías Mena</h3>
+                                <span>Coordinador / Arquitectura</span>
+                                <p>
+                                    Coordinación del equipo y arquitectura general
+                                    del proyecto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MIKEL -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="equipo-card">
+                            <div class="equipo-avatar">
+                                <img src="img/equipo/mikel-guzman.png" alt="Mikel Guzman">
+                            </div>
+
+                            <div>
+                                <h3>Mikel Guzman</h3>
+                                <span>Módulo de Catálogo</span>
+                                <p>
+                                    Desarrollo del catálogo, filtros y presentación
+                                    de motocicletas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PABLO -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="equipo-card">
+                            <div class="equipo-avatar">
+                                <img src="img/equipo/pablo-yupa.png" alt="Pablo Yupa">
+                            </div>
+
+                            <div>
+                                <h3>Pablo Yupa</h3>
+                                <span>Detalle de Producto</span>
+                                <p>
+                                    Desarrollo de la información detallada
+                                    de cada motocicleta.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BENJAMIN -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="equipo-card">
+                            <div class="equipo-avatar">
+                                <img src="img/equipo/benjamin-basurto.png" alt="Benjamín Basurto">
+                            </div>
+
+                            <div>
+                                <h3>Benjamín Basurto</h3>
+                                <span>Carrito de Compras</span>
+                                <p>
+                                    Desarrollo del carrito y proceso
+                                    de compra del sistema.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KEVIN -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="equipo-card">
+                            <div class="equipo-avatar">
+                                <img src="img/equipo/kevin-balseca.png" alt="Kevin Balseca">
+                            </div>
+
+                            <div>
+                                <h3>Kevin Balseca</h3>
+                                <span>Panel de Administración</span>
+                                <p>
+                                    Desarrollo del módulo administrativo
+                                    y gestión del inventario.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ANGEL -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="equipo-card">
+                            <div class="equipo-avatar">
+                                <img src="img/equipo/angel-galarza.png" alt="Ángel Galarza">
+                            </div>
+
+                            <div>
+                                <h3>Angel Galarza</h3>
+                                <span>Layout Base y UI</span>
+                                <p>
+                                    Diseño del layout, navbar, hero, footer,
+                                    responsive e interfaz visual.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -299,31 +516,68 @@
         </div>
     </main>
 
-    <footer id="contacto">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <h5>MotoStore</h5>
-                    <p>Proyecto web para la visualizacion y gestion de motocicletas.</p>
+    <footer id="contacto" class="footer-principal">
+        <div class="container py-5">
+
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-logo">
+                        Moto<span>Store</span>
+                    </h3>
+
+                    <p class="footer-descripcion">
+                        Proyecto web para la visualización y gestión
+                        de motocicletas.
+                    </p>
+
+                    <p class="footer-frase">
+                        Más que motos, un estilo de vida.
+                    </p>
                 </div>
-                <div class="col-md-4 mb-3">
+
+                <div class="col-lg-2 col-md-6">
                     <h5>Enlaces</h5>
-                    <ul class="list-unstyled">
+
+                    <ul class="list-unstyled footer-links">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="#catalogo">Motos</a></li>
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-3">
+
+                <div class="col-lg-3 col-md-6">
                     <h5>Contacto</h5>
-                    <p>Ambato - Ecuador</p>
-                    <p>099 000 0000</p>
-                    <p>contacto@motostore.com</p>
+
+                    <p><i class="bi bi-geo-alt-fill"></i> Ambato - Ecuador</p>
+                    <p><i class="bi bi-telephone-fill"></i> 099 351 9576</p>
+                    <p><i class="bi bi-envelope-fill"></i> contacto@motostore.com</p>
+                    <p><i class="bi bi-clock-fill"></i> Lun - Sab | 08:00 - 18:00</p>
                 </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Explora MotoStore</h5>
+
+                    <p>
+                        Encuentra la motocicleta que se adapte
+                        a tu estilo y necesidades.
+                    </p>
+
+                    <a href="#catalogo" class="btn btn-danger footer-boton">
+                        Ver motocicletas
+                    </a>
+                </div>
+
             </div>
-            <hr>
-            <p class="text-center mb-0">2026 MotoStore - Proyecto academico</p>
+
+            <hr class="footer-linea">
+
+            <p class="text-center mb-0 footer-copy">
+                2026 MotoStore - Proyecto académico
+            </p>
+
         </div>
     </footer>
 
