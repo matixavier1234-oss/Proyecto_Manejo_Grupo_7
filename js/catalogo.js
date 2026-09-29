@@ -24,25 +24,32 @@ function mostrarMotos(motosMostrar) {
                         class="card-img-top img-moto" 
                         alt="${moto.marca} ${moto.modelo}">
 
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">
                             ${moto.marca} ${moto.modelo}
                         </h5>
 
-                        <p class="card-text text-muted">
+                        <p class="card-text text-muted mb-1">
                             Tipo:
                             <span class="text-capitalize">
                                 ${moto.tipo}
                             </span>
                         </p>
 
-                        <p class="card-text fw-bold text-danger">
+                        <p class="card-text fw-bold text-danger mb-3">
                             $${moto.precio}
                         </p>
 
-                        <button class="btn btn-outline-danger w-100 mt-2" onclick="mostrarDetalleMoto(${moto.id})">
-                            Ver detalles
-                        </button>
+                        <!-- Contenedor para alinear botones al fondo -->
+                        <div class="mt-auto d-flex flex-column gap-2">
+                            <button class="btn btn-outline-danger w-100" onclick="mostrarDetalleMoto(${moto.id})">
+                                Ver detalles
+                            </button>
+                            
+                            <button class="btn btn-success w-100" onclick="agregarAlCarritoDesdeCatalogo(${moto.id}, '${moto.marca} ${moto.modelo}', ${moto.precio})">
+                                🛒 Añadir al carrito
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,3 +74,21 @@ filtro.addEventListener('change', (e) => {
         mostrarMotos(motosFiltradas);
     }
 });
+
+// Función para conectar el botón del catálogo con el carrito de Benjamín
+window.agregarAlCarritoDesdeCatalogo = function(id, nombre, precio) {
+    if (typeof agregarAlCarrito === "function") {
+        // 1. Guardar en memoria
+        agregarAlCarrito(id, nombre, precio); 
+        
+        // 2. Actualizar diseño del carrito
+        actualizarInterfazCarrito(); 
+
+        // 3. Desplegar el menú lateral del carrito
+        const panelCarrito = document.getElementById('carritoOffcanvas');
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(panelCarrito) || new bootstrap.Offcanvas(panelCarrito);
+        bsOffcanvas.show();
+    } else {
+        console.error("No se detectó el módulo del carrito. Revisa que carrito.js esté cargado.");
+    }
+};
