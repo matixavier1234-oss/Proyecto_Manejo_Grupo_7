@@ -96,3 +96,6 @@ if (btnVaciar) {
 document.addEventListener('DOMContentLoaded', () => {
     actualizarInterfazCarrito();
 });
+
+
+
