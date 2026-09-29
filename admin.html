@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel administrativo | MotoStore</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="admin-page">
+    <header class="admin-topbar">
+        <nav class="navbar navbar-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <span class="brand-mark"><i class="bi bi-speedometer2"></i></span>
+                    <span><strong>MotoStore</strong><small>Control Center</small></span>
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="admin-live-status"><span></span> Sistema operativo</span>
+                    <a class="btn btn-sm btn-outline-light" href="index.html">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Ver tienda
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-shell container py-4 py-lg-5">
+        <div class="admin-heading d-flex flex-column flex-lg-row justify-content-between gap-4 mb-4">
+            <div>
+                <p class="admin-kicker mb-2"><i class="bi bi-grid-1x2-fill me-2"></i>Operaciones / Panel administrativo</p>
+                <h1 class="display-6 mb-2">Centro de control</h1>
+                <p class="admin-heading__description mb-0">Inventario y pedidos en un solo lugar, con la información que necesitas para actuar.</p>
+            </div>
+            <button class="btn btn-danger admin-primary-action align-self-lg-end" id="btn-nueva-moto" type="button">
+                <i class="bi bi-plus-lg me-2"></i>Agregar motocicleta
+            </button>
+        </div>
+
+        <section class="admin-metrics row g-3 mb-4" aria-label="Resumen operativo">
+            <div class="col-6 col-xl-3">
+                <article class="metric-card metric-card--dark">
+                    <div class="metric-card__icon"><i class="bi bi-box-seam"></i></div>
+                    <p>Total inventario</p>
+                    <strong id="resumen-inventario">0</strong>
+                    <small>unidades registradas</small>
+                </article>
+            </div>
+            <div class="col-6 col-xl-3">
+                <article class="metric-card">
+                    <div class="metric-card__icon metric-card__icon--amber"><i class="bi bi-exclamation-triangle"></i></div>
+                    <p>Stock por revisar</p>
+                    <strong id="resumen-stock-bajo">0</strong>
+                    <small>unidades con alerta</small>
+                </article>
+            </div>
+            <div class="col-6 col-xl-3">
+                <article class="metric-card">
+                    <div class="metric-card__icon metric-card__icon--blue"><i class="bi bi-receipt"></i></div>
+                    <p>Pedidos activos</p>
+                    <strong id="resumen-pedidos">0</strong>
+                    <small>pendientes o en proceso</small>
+                </article>
+            </div>
+            <div class="col-6 col-xl-3">
+                <article class="metric-card">
+                    <div class="metric-card__icon metric-card__icon--green"><i class="bi bi-cash-stack"></i></div>
+                    <p>Valor inventario</p>
+                    <strong id="resumen-valor">$0</strong>
+                    <small>valor referencial</small>
+                </article>
+            </div>
+        </section>
+
+        <section class="admin-panel" aria-labelledby="inventario-titulo">
+            <div class="admin-panel__header d-flex flex-column flex-lg-row justify-content-between gap-3">
+                <div>
+                    <div class="admin-section-label"><i class="bi bi-boxes"></i><span>Catálogo</span></div>
+                    <h2 class="h5 mb-1" id="inventario-titulo">Inventario de motocicletas</h2>
+                    <p class="text-secondary small mb-0"><span id="contador-motos">0</span> resultados visibles</p>
+                </div>
+                <div class="admin-filters row g-2">
+                    <div class="col-sm-auto">
+                        <label class="visually-hidden" for="buscar-moto">Buscar motocicleta</label>
+                        <div class="admin-search">
+                            <i class="bi bi-search"></i>
+                            <input class="form-control" id="buscar-moto" type="search" placeholder="Buscar marca o modelo">
+                        </div>
+                    </div>
+                    <div class="col-sm-auto">
+                        <label class="visually-hidden" for="filtro-tipo-admin">Filtrar por tipo</label>
+                        <select class="form-select" id="filtro-tipo-admin">
+                            <option value="todas">Todos los tipos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive admin-table-wrap">
+                <table class="table admin-table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Motocicleta</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col" class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-inventario">
+                        <tr>
+                            <td class="text-center text-secondary py-4" colspan="7">Cargando inventario...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="admin-panel mt-4" aria-labelledby="pedidos-titulo">
+            <div class="admin-panel__header d-flex flex-column flex-lg-row justify-content-between gap-3">
+                <div>
+                    <div class="admin-section-label"><i class="bi bi-truck"></i><span>Fulfillment</span></div>
+                    <h2 class="h5 mb-1" id="pedidos-titulo">Seguimiento de pedidos</h2>
+                    <p class="text-secondary small mb-0"><span id="contador-pedidos">0</span> pedidos visibles</p>
+                </div>
+                <div class="col-sm-auto">
+                    <label class="visually-hidden" for="filtro-estado-pedido">Filtrar por estado</label>
+                    <select class="form-select" id="filtro-estado-pedido">
+                        <option value="todos">Todos los estados</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-responsive admin-table-wrap">
+                <table class="table admin-table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Pedido</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Productos</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col" class="text-end">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-pedidos">
+                        <tr>
+                            <td class="text-center text-secondary py-4" colspan="7">Cargando pedidos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="modal-moto" tabindex="-1" aria-labelledby="modal-moto-titulo" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="modal-moto-titulo">Agregar motocicleta</h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <form id="formulario-moto">
+                    <div class="modal-body">
+                        <input id="moto-id" type="hidden">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="moto-marca">Marca</label>
+                                <input class="form-control" id="moto-marca" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="moto-modelo">Modelo</label>
+                                <input class="form-control" id="moto-modelo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="moto-tipo">Tipo</label>
+                                <select class="form-select" id="moto-tipo" required>
+                                    <option value="urbana">Urbana</option>
+                                    <option value="deportiva">Deportiva</option>
+                                    <option value="trabajo">Trabajo</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label" for="moto-precio">Precio</label>
+                                <input class="form-control" id="moto-precio" type="number" min="0" step="0.01" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label" for="moto-stock">Stock</label>
+                                <input class="form-control" id="moto-stock" type="number" min="0" step="1" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="moto-imagen">URL de imagen</label>
+                                <input class="form-control" id="moto-imagen" type="url" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" for="moto-descripcion">Descripción</label>
+                                <textarea class="form-control" id="moto-descripcion" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-danger" type="submit">Guardar motocicleta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
