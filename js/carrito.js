@@ -89,26 +89,67 @@ if (btnVaciar) {
 // ==========================================
 // INTEGRACIÓN CON EL BOTÓN DE LA PÁGINA
 // ==========================================
-const btnAgregarPantalla = document.getElementById('btn-agregar-carrito');
+// Capturar el botón de proceder al pago
+const btnProcesarCompra = document.getElementById('btn-procesar-compra');
 
-if (btnAgregarPantalla) {
-    btnAgregarPantalla.addEventListener('click', () => {
-        const nombreObtenido = document.getElementById('detalle-marca-modelo').textContent || "Moto Seleccionada";
+if (btnProcesarCompra) {
+    btnProcesarCompra.addEventListener('click', () => {
 
-        const precioTexto = document.getElementById('detalle-precio').textContent;
-        const precioLimpio = precioTexto.replace(/[\$,\.\s]/g, '');
-        const precioObtenido = parseInt(precioLimpio) || 0;
+        // 1. Validar si está vacío con alerta moderna
+        if (carrito.length === 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Carrito vacío',
+                text: 'Agrega una motocicleta del catálogo primero.',
+                confirmButtonColor: '#dc3545' // Rojo estilo Bootstrap
+            });
+            return;
+        }
 
-        const idGenerado = Math.floor(Math.random() * 1000);
+        // 2. Confirmación de compra elegante
+        Swal.fire({
+            title: '¿Proceder al pago?',
+            text: "Se procesará la compra de las motocicletas en tu carrito.",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#198754', // Verde estilo Bootstrap
+            cancelButtonColor: '#dc3545',
+            confirmButtonText: 'Sí, pagar ahora',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-        agregarAlCarrito(idGenerado, nombreObtenido, precioObtenido);
-        actualizarInterfazCarrito();
+                // 3. Pantalla de carga simulando conexión bancaria
+                Swal.fire({
+                    title: 'Procesando pago...',
+                    html: 'Conectando de forma segura, por favor espera.',
+                    timer: 2000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                }).then(() => {
+                    // 4. Vaciar carrito usando las funciones de Benjamín
+                    vaciarCarrito();
+                    actualizarInterfazCarrito();
 
-        const panelCarrito = document.getElementById('carritoOffcanvas');
-        const bsOffcanvas = bootstrap.Offcanvas.getInstance(panelCarrito) || new bootstrap.Offcanvas(panelCarrito);
-        bsOffcanvas.show();
+                    // Ocultar el menú lateral
+                    const panelCarrito = document.getElementById('carritoOffcanvas');
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(panelCarrito);
+                    if (bsOffcanvas) {
+                        bsOffcanvas.hide();
+                    }
+
+                    // 5. Alerta de éxito final
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Pago Exitoso!',
+                        text: 'Gracias por tu compra en MotoStore.',
+                        confirmButtonColor: '#198754'
+                    });
+                });
+            }
+        });
     });
 }
-
-// Inicializar la interfaz automáticamente al cargar la página
-actualizarInterfazCarrito();
